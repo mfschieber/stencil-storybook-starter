@@ -6,12 +6,25 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AvatarImage {
+        "alt": string;
+        "online"?: boolean;
+        "shape"?: 'round' | 'smooth' | 'squared';
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+        "src": string;
+    }
     interface MyComponent {
         "first"?: string;
         "last"?: string;
     }
 }
 declare global {
+    interface HTMLAvatarImageElement extends Components.AvatarImage, HTMLStencilElement {
+    }
+    var HTMLAvatarImageElement: {
+        prototype: HTMLAvatarImageElement;
+        new (): HTMLAvatarImageElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -19,15 +32,24 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "avatar-image": HTMLAvatarImageElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface AvatarImage {
+        "alt": string;
+        "online"?: boolean;
+        "shape"?: 'round' | 'smooth' | 'squared';
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+        "src": string;
+    }
     interface MyComponent {
         "first"?: string;
         "last"?: string;
     }
     interface IntrinsicElements {
+        "avatar-image": AvatarImage;
         "my-component": MyComponent;
     }
 }
@@ -35,6 +57,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "avatar-image": LocalJSX.AvatarImage & JSXBase.HTMLAttributes<HTMLAvatarImageElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

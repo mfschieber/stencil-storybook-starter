@@ -10,6 +10,6 @@ export class MyComponent implements ComponentInterface {
   @Prop() last?: string;
 
   render() {
-    return <Host>{`Hello, my name is ${this.first} ${this.last}`}</Host>;
+    return <Host>{`Bonjour, my name is ${this.first} ${this.last}`}</Host>;
   }
 }
