@@ -1,0 +1,54 @@
+.button {
+  position: relative;
+  background: transparent;
+  border-color: transparent;
+  border-radius: 1px;
+  img {
+    position: relative;
+    object-fit: cover;
+
+    /* Sizes */
+    &.large {
+      width: 150px;
+      height: 150px;
+    }
+    &.medium {
+      width: 80px;
+      height: 80px;
+    }
+    &.small {
+      width: 40px;
+      height: 40px;
+    }
+    &.xsmall {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.button:after {
+  position: relative;
+  display: flex;
+  margin-top: -115%;
+  margin-right: -10px !important;
+  margin-left: -10px !important;
+  padding-top: 110%;
+  background: white;
+  border-radius: 40%;
+  opacity: 0;
+  transition: all 0.8s;
+  content: '';
+}
+
+.button:active:after {
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.button:hover {
+  background-color: rgb(226, 222, 222);
+  border-radius: 40%;
+}

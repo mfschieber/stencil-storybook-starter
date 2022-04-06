@@ -6,7 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface AvatarImage {
+    interface GmailButton {
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+        "type"?: 'reload';
+    }
+    interface GmailImage {
         "alt": string;
         "online"?: boolean;
         "shape"?: 'round' | 'smooth' | 'squared';
@@ -19,11 +23,17 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLAvatarImageElement extends Components.AvatarImage, HTMLStencilElement {
+    interface HTMLGmailButtonElement extends Components.GmailButton, HTMLStencilElement {
     }
-    var HTMLAvatarImageElement: {
-        prototype: HTMLAvatarImageElement;
-        new (): HTMLAvatarImageElement;
+    var HTMLGmailButtonElement: {
+        prototype: HTMLGmailButtonElement;
+        new (): HTMLGmailButtonElement;
+    };
+    interface HTMLGmailImageElement extends Components.GmailImage, HTMLStencilElement {
+    }
+    var HTMLGmailImageElement: {
+        prototype: HTMLGmailImageElement;
+        new (): HTMLGmailImageElement;
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -32,12 +42,17 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
-        "avatar-image": HTMLAvatarImageElement;
+        "gmail-button": HTMLGmailButtonElement;
+        "gmail-image": HTMLGmailImageElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
-    interface AvatarImage {
+    interface GmailButton {
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+        "type"?: 'reload';
+    }
+    interface GmailImage {
         "alt": string;
         "online"?: boolean;
         "shape"?: 'round' | 'smooth' | 'squared';
@@ -49,7 +64,8 @@ declare namespace LocalJSX {
         "last"?: string;
     }
     interface IntrinsicElements {
-        "avatar-image": AvatarImage;
+        "gmail-button": GmailButton;
+        "gmail-image": GmailImage;
         "my-component": MyComponent;
     }
 }
@@ -57,7 +73,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "avatar-image": LocalJSX.AvatarImage & JSXBase.HTMLAttributes<HTMLAvatarImageElement>;
+            "gmail-button": LocalJSX.GmailButton & JSXBase.HTMLAttributes<HTMLGmailButtonElement>;
+            "gmail-image": LocalJSX.GmailImage & JSXBase.HTMLAttributes<HTMLGmailImageElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

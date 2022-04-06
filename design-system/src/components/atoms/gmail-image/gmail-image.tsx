@@ -1,11 +1,11 @@
 import { Component, ComponentInterface, h, Host, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'avatar-image',
-  styleUrl: 'avatar-image.scss',
+  tag: 'gmail-image',
+  styleUrl: 'gmail-image.scss',
   shadow: true,
 })
-export class Avatar implements ComponentInterface {
+export class GmailImage implements ComponentInterface {
   @Prop() src!: string;
   @Prop() alt!: string;
   @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall' = 'medium';
@@ -15,10 +15,8 @@ export class Avatar implements ComponentInterface {
   render() {
     return (
       <Host>
-        <img src={this.src} alt={this.alt} class={`img ${this.size} ${this.shape} ${this.online} `}>
-          {' '}
-        </img>
-        <notification></notification>
+        <img src={this.src} alt={this.alt} class={`img ${this.size} ${this.shape} ${this.online} `} />
+        <div class="notification"></div>
       </Host>
     );
   }

@@ -3,7 +3,7 @@ import { Components } from '@yoobic/design-system';
 import { html } from 'lit-html';
 
 export default {
-  title: 'PROJET/atoms/avatar-image',
+  title: 'PROJET/atoms/gmail-image',
   argTypes: {
     src: {
       control: { type: 'text' },
@@ -26,11 +26,11 @@ export default {
   },
 } as Meta;
 
-const Template: Story<Components.AvatarImage> = ({ src = undefined, alt = 'Text alt', size = 'medium', shape = 'round', online = false }) => {
-  return html`<avatar-image alt=${alt} src=${src} size=${size} shape=${shape} online=${online}></avatar-image>`;
+const Template: Story<Components.GmailImage> = ({ src = undefined, alt = 'Text alt', size = 'medium', shape = 'round', online = false }) => {
+  return html`<gmail-image alt=${alt} src=${src} size=${size} shape=${shape} online=${online}></gmail-image>`;
 };
 
-export const Default: Story<Components.AvatarImage> = Template.bind({});
+export const Default: Story<Components.GmailImage> = Template.bind({});
 Default.args = {
   src: 'https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg',
   alt: 'Text alt',
@@ -39,7 +39,7 @@ Default.args = {
   online: false,
 };
 
-export const Online: Story<Components.AvatarImage> = Template.bind({});
+export const Online: Story<Components.GmailImage> = Template.bind({});
 Online.args = {
   src: 'https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg',
   alt: 'Text alt',
