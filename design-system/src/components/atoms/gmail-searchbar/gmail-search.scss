@@ -1,0 +1,11 @@
+.search {
+  width: 100%;
+  height: auto;
+  background: rgb(246, 243, 243);
+  border: 0px;
+}
+
+.search:focus {
+  background: white;
+  outline-color: rgb(246, 243, 243);
+}

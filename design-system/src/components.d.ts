@@ -17,6 +17,8 @@ export namespace Components {
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
         "src": string;
     }
+    interface GmailSearch {
+    }
     interface MyComponent {
         "first"?: string;
         "last"?: string;
@@ -35,6 +37,12 @@ declare global {
         prototype: HTMLGmailImageElement;
         new (): HTMLGmailImageElement;
     };
+    interface HTMLGmailSearchElement extends Components.GmailSearch, HTMLStencilElement {
+    }
+    var HTMLGmailSearchElement: {
+        prototype: HTMLGmailSearchElement;
+        new (): HTMLGmailSearchElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -44,6 +52,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "gmail-button": HTMLGmailButtonElement;
         "gmail-image": HTMLGmailImageElement;
+        "gmail-search": HTMLGmailSearchElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -59,6 +68,8 @@ declare namespace LocalJSX {
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
         "src": string;
     }
+    interface GmailSearch {
+    }
     interface MyComponent {
         "first"?: string;
         "last"?: string;
@@ -66,6 +77,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "gmail-button": GmailButton;
         "gmail-image": GmailImage;
+        "gmail-search": GmailSearch;
         "my-component": MyComponent;
     }
 }
@@ -75,6 +87,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "gmail-button": LocalJSX.GmailButton & JSXBase.HTMLAttributes<HTMLGmailButtonElement>;
             "gmail-image": LocalJSX.GmailImage & JSXBase.HTMLAttributes<HTMLGmailImageElement>;
+            "gmail-search": LocalJSX.GmailSearch & JSXBase.HTMLAttributes<HTMLGmailSearchElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
