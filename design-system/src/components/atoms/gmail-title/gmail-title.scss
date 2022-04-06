@@ -1,0 +1,33 @@
+.p {
+  /* Sizes */
+  &.large {
+    margin: 8px 12px;
+    font-weight: 900;
+    font-size: 32px;
+  }
+  &.medium {
+    margin: 6px 9px;
+    font-weight: 700;
+    font-size: 26px;
+  }
+  &.small {
+    margin: 4px 6px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  &.xsmall {
+    margin: 2px 3px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  &.normal {
+    font-weight: normal;
+  }
+  &.italic {
+    font-weight: normal;
+    font-style: italic;
+  }
+  &.bold {
+    font-weight: bold;
+  }
+}

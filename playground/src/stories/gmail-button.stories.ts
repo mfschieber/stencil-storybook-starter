@@ -3,7 +3,7 @@ import { Components } from '@yoobic/design-system';
 import { html } from 'lit-html';
 
 export default {
-  title: 'PROJET/atoms/gmail-button',
+  title: 'ATOMS/gmail-button',
   argTypes: {
     size: {
       options: ['large', 'medium', 'small', 'xsmall'],

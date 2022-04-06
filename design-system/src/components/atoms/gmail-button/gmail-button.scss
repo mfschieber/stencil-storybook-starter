@@ -35,7 +35,7 @@
   margin-left: -10px !important;
   padding-top: 110%;
   background: white;
-  border-radius: 40%;
+  border-radius: 40px;
   opacity: 0;
   transition: all 0.8s;
   content: '';
@@ -50,5 +50,5 @@
 
 .button:hover {
   background-color: rgb(226, 222, 222);
-  border-radius: 40%;
+  border-radius: 40px;
 }

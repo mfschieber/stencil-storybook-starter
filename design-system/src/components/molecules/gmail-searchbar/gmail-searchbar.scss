@@ -1,0 +1,16 @@
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgb(246, 243, 243);
+  border-radius: 10px;
+}
+
+.search {
+  width: 90%;
+}
+
+.searchbar:focus {
+  background: white;
+}

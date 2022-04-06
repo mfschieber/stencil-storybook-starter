@@ -3,7 +3,7 @@ import { Components } from '@yoobic/design-system';
 import { html } from 'lit-html';
 
 export default {
-  title: 'PROJET/atoms/gmail-search',
+  title: 'ATOMS/gmail-search',
 } as Meta;
 
 const Template: Story<Components.GmailSearch> = () => {

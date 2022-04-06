@@ -10,13 +10,12 @@ export class GmailImage implements ComponentInterface {
   @Prop() alt!: string;
   @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall' = 'medium';
   @Prop() shape?: 'round' | 'smooth' | 'squared' = 'round';
-  @Prop() online?: boolean;
-
+  @Prop() online?: 'online' | 'offline' | 'busy';
   render() {
     return (
       <Host>
         <img src={this.src} alt={this.alt} class={`img ${this.size} ${this.shape} ${this.online} `} />
-        <div class="notification"></div>
+        <div class={`notification ${this.size}  ${this.online} `}></div>
       </Host>
     );
   }

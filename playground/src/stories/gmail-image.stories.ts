@@ -3,7 +3,7 @@ import { Components } from '@yoobic/design-system';
 import { html } from 'lit-html';
 
 export default {
-  title: 'PROJET/atoms/gmail-image',
+  title: 'ATOMS/gmail-image',
   argTypes: {
     src: {
       control: { type: 'text' },
@@ -20,13 +20,13 @@ export default {
       control: { type: 'inline-radio' },
     },
     online: {
-      options: ['yes', 'no'],
-      control: { type: 'inline-radio' },
+      options: ['online', 'offline', 'busy'],
+      control: { type: 'text' },
     },
   },
 } as Meta;
 
-const Template: Story<Components.GmailImage> = ({ src = undefined, alt = 'Text alt', size = 'medium', shape = 'round', online = false }) => {
+const Template: Story<Components.GmailImage> = ({ src = undefined, alt = 'Text alt', size = 'medium', shape = 'round', online = 'online' }) => {
   return html`<gmail-image alt=${alt} src=${src} size=${size} shape=${shape} online=${online}></gmail-image>`;
 };
 
@@ -36,7 +36,7 @@ Default.args = {
   alt: 'Text alt',
   size: 'medium',
   shape: 'round',
-  online: false,
+  online: 'online',
 };
 
 export const Online: Story<Components.GmailImage> = Template.bind({});
@@ -45,5 +45,23 @@ Online.args = {
   alt: 'Text alt',
   size: 'medium',
   shape: 'round',
-  online: true,
+  online: 'online',
+};
+
+export const Offline: Story<Components.GmailImage> = Template.bind({});
+Offline.args = {
+  src: 'https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg',
+  alt: 'Text alt',
+  size: 'medium',
+  shape: 'round',
+  online: 'offline',
+};
+
+export const Busy: Story<Components.GmailImage> = Template.bind({});
+Busy.args = {
+  src: 'https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/photo-profil_301783868.jpg',
+  alt: 'Text alt',
+  size: 'medium',
+  shape: 'round',
+  online: 'busy',
 };

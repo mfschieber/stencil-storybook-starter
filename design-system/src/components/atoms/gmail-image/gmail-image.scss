@@ -1,13 +1,6 @@
 :host {
   position: relative;
   border-radius: 1px;
-  .notification {
-    display: flex;
-    width: 25px;
-    height: 25px;
-    background: #ff4754;
-    border-radius: 100%;
-  }
   img {
     position: relative;
     object-fit: cover;
@@ -32,13 +25,83 @@
 
     /* Shapes */
     &.round {
-      border-radius: 50%;
+      border-radius: 50px;
     }
     &.smooth {
       border-radius: 6px;
     }
     &.squared {
       border-radius: 0;
+    }
+  }
+  .notification {
+    position: absolute;
+    display: flex;
+    border-radius: 100px;
+    border-radius: 50px;
+    &.large {
+      right: 0px;
+      bottom: 0px;
+      width: 1.4rem;
+      height: 1.4rem;
+      border: 0.4rem solid white;
+      &.offline {
+        background-color: red;
+      }
+      &.busy {
+        background-color: orange;
+      }
+      &.online {
+        background-color: #3aa76d;
+      }
+    }
+    &.medium {
+      right: 0px;
+      bottom: 0px;
+      width: 1rem;
+      height: 1rem;
+      border: 0.2rem solid white;
+      &.offline {
+        background-color: red;
+      }
+      &.busy {
+        background-color: orange;
+      }
+      &.online {
+        background-color: #3aa76d;
+      }
+    }
+    &.small {
+      right: 0px;
+      bottom: 0px;
+      width: 0.45rem;
+      height: 0.45rem;
+      border: 0.15rem solid white;
+      &.offline {
+        background-color: red;
+      }
+      &.busy {
+        background-color: orange;
+      }
+      &.online {
+        background-color: #3aa76d;
+      }
+    }
+    &.xsmall {
+      right: 0px;
+      bottom: 0px;
+      width: 0.25rem;
+      height: 0.25rem;
+      border: 0.08rem solid white;
+      &.offline {
+        background-color: red;
+      }
+      &.busy {
+        background-color: orange;
+      }
+      &.online {
+        background-color: #3aa76d;
+      }
     }
   }
 }

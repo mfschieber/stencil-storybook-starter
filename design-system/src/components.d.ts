@@ -12,16 +12,20 @@ export namespace Components {
     }
     interface GmailImage {
         "alt": string;
-        "online"?: boolean;
+        "online"?: 'online' | 'offline' | 'busy';
         "shape"?: 'round' | 'smooth' | 'squared';
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
         "src": string;
     }
     interface GmailSearch {
     }
-    interface MyComponent {
-        "first"?: string;
-        "last"?: string;
+    interface GmailSearchbar {
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+    }
+    interface GmailTitle {
+        "content": string;
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+        "type"?: 'normal' | 'bold' | 'italic';
     }
 }
 declare global {
@@ -43,17 +47,24 @@ declare global {
         prototype: HTMLGmailSearchElement;
         new (): HTMLGmailSearchElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLGmailSearchbarElement extends Components.GmailSearchbar, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLGmailSearchbarElement: {
+        prototype: HTMLGmailSearchbarElement;
+        new (): HTMLGmailSearchbarElement;
+    };
+    interface HTMLGmailTitleElement extends Components.GmailTitle, HTMLStencilElement {
+    }
+    var HTMLGmailTitleElement: {
+        prototype: HTMLGmailTitleElement;
+        new (): HTMLGmailTitleElement;
     };
     interface HTMLElementTagNameMap {
         "gmail-button": HTMLGmailButtonElement;
         "gmail-image": HTMLGmailImageElement;
         "gmail-search": HTMLGmailSearchElement;
-        "my-component": HTMLMyComponentElement;
+        "gmail-searchbar": HTMLGmailSearchbarElement;
+        "gmail-title": HTMLGmailTitleElement;
     }
 }
 declare namespace LocalJSX {
@@ -63,22 +74,27 @@ declare namespace LocalJSX {
     }
     interface GmailImage {
         "alt": string;
-        "online"?: boolean;
+        "online"?: 'online' | 'offline' | 'busy';
         "shape"?: 'round' | 'smooth' | 'squared';
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
         "src": string;
     }
     interface GmailSearch {
     }
-    interface MyComponent {
-        "first"?: string;
-        "last"?: string;
+    interface GmailSearchbar {
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+    }
+    interface GmailTitle {
+        "content": string;
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+        "type"?: 'normal' | 'bold' | 'italic';
     }
     interface IntrinsicElements {
         "gmail-button": GmailButton;
         "gmail-image": GmailImage;
         "gmail-search": GmailSearch;
-        "my-component": MyComponent;
+        "gmail-searchbar": GmailSearchbar;
+        "gmail-title": GmailTitle;
     }
 }
 export { LocalJSX as JSX };
@@ -88,7 +104,8 @@ declare module "@stencil/core" {
             "gmail-button": LocalJSX.GmailButton & JSXBase.HTMLAttributes<HTMLGmailButtonElement>;
             "gmail-image": LocalJSX.GmailImage & JSXBase.HTMLAttributes<HTMLGmailImageElement>;
             "gmail-search": LocalJSX.GmailSearch & JSXBase.HTMLAttributes<HTMLGmailSearchElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "gmail-searchbar": LocalJSX.GmailSearchbar & JSXBase.HTMLAttributes<HTMLGmailSearchbarElement>;
+            "gmail-title": LocalJSX.GmailTitle & JSXBase.HTMLAttributes<HTMLGmailTitleElement>;
         }
     }
 }
