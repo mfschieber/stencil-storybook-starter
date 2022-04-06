@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, h, Host, Prop, State } from '@stencil/core';
+import { Component, ComponentInterface, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'gmail-search',

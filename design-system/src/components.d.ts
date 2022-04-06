@@ -8,7 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface GmailButton {
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
-        "type"?: 'reload';
+        "type"?: 'reload' | 'search' | 'leftarrow' | 'rightarrow' | 'gearwheel' | 'menu';
     }
     interface GmailImage {
         "alt": string;
@@ -59,7 +59,7 @@ declare global {
 declare namespace LocalJSX {
     interface GmailButton {
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
-        "type"?: 'reload';
+        "type"?: 'reload' | 'search' | 'leftarrow' | 'rightarrow' | 'gearwheel' | 'menu';
     }
     interface GmailImage {
         "alt": string;
