@@ -1,14 +1,28 @@
-import { Component, ComponentInterface, h, Host, Prop, State } from '@stencil/core';
+import { Component, ComponentInterface, Event, EventEmitter, h, Host, Prop, State } from '@stencil/core';
+
+import { Identifier } from '../../shared/identifier';
 
 @Component({
-  tag: 'gmail-button',
-  styleUrl: 'gmail-button.scss',
+  tag: 'gmail-logobutton',
+  styleUrl: 'gmail-logobutton.scss',
   shadow: true,
 })
-export class GmailButton implements ComponentInterface {
+export class GmailLogobutton implements ComponentInterface {
+  @Prop() identifier?: Identifier = 'logobutton';
   @State() srcIcon = '';
   @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall' = 'medium';
-  @Prop() type?: 'reload' | 'search' | 'leftarrow' | 'rightarrow' | 'gearwheel' | 'menu';
+  @Prop() type?: 'reload' | 'search' | 'leftarrow' | 'rightarrow' | 'gearwheel' | 'menu' | 'dropdown';
+
+  @Event({
+    eventName: 'logobuttonClicked',
+    bubbles: true,
+    composed: true,
+  })
+  logobuttonClicked: EventEmitter<Identifier>;
+
+  logobuttonClickedHandler() {
+    this.logobuttonClicked.emit(this.identifier);
+  }
 
   icone(type) {
     if (type == 'reload') {
@@ -23,6 +37,8 @@ export class GmailButton implements ComponentInterface {
       this.srcIcon = 'https://cdn-icons-png.flaticon.com/512/2099/2099058.png';
     } else if (type == 'menu') {
       this.srcIcon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png';
+    } else if (type == 'dropdown') {
+      this.srcIcon = 'https://seekicon.com/free-icon-download/three-dots-vertical_1.png';
     }
     return this.srcIcon;
   }
@@ -30,7 +46,7 @@ export class GmailButton implements ComponentInterface {
   render() {
     return (
       <Host>
-        <button class="button ${this.isSelected}">
+        <button class="logobutton" onClick={this.logobuttonClickedHandler.bind(this)}>
           <img src={this.icone(this.type)} class={`img ${this.size}`} />
         </button>
       </Host>

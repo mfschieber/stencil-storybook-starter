@@ -5,7 +5,7 @@ import { Component, ComponentInterface, h, Host, Prop, State } from '@stencil/co
   styleUrl: 'gmail-searchbar.scss',
   shadow: true,
 })
-export class GmailButton implements ComponentInterface {
+export class GmailSearchbar implements ComponentInterface {
   @State() srcIcon = '';
   @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall' = 'medium';
 
@@ -13,7 +13,7 @@ export class GmailButton implements ComponentInterface {
     return (
       <Host>
         <div class="searchbar">
-          <gmail-button class="button" size="xsmall" type="search"></gmail-button>
+          <gmail-logobutton class="logobutton" size="xsmall" type="search"></gmail-logobutton>
           <gmail-search class="search"></gmail-search>
         </div>
       </Host>

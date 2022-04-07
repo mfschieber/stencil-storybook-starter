@@ -1,4 +1,4 @@
-.button {
+.logobutton {
   position: relative;
   background: transparent;
   border-color: transparent;
@@ -27,7 +27,7 @@
   }
 }
 
-.button:after {
+.logobutton:after {
   position: relative;
   display: flex;
   margin-top: -115%;
@@ -41,14 +41,14 @@
   content: '';
 }
 
-.button:active:after {
+.logobutton:active:after {
   margin: 0;
   padding: 0;
   opacity: 1;
   transition: 0s;
 }
 
-.button:hover {
+.logobutton:hover {
   background-color: rgb(226, 222, 222);
   border-radius: 40px;
 }

@@ -12,9 +12,9 @@ export default {
   },
 } as Meta;
 
-const Template: Story<Components.GmailButton> = ({ size = 'medium' }) => {
+const Template: Story<Components.GmailSearchbar> = ({ size = 'medium' }) => {
   return html`<gmail-searchbar size=${size}></gmail-searchbar>`;
 };
 
-export const Default: Story<Components.GmailButton> = Template.bind({});
+export const Default: Story<Components.GmailSearchbar> = Template.bind({});
 Default.args = {};
