@@ -1,4 +1,4 @@
-import { Component, ComponentInterface, h, Host, Listen, Method, Prop, State } from '@stencil/core';
+import { Component, ComponentInterface, h, Host, Method, Prop, State } from '@stencil/core';
 
 import { Identifier } from '../../shared/identifier';
 
@@ -8,14 +8,13 @@ import { Identifier } from '../../shared/identifier';
   shadow: true,
 })
 export class GmailDropdownbutton implements ComponentInterface {
-  @State() srcIcon = '';
   @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall' = 'medium';
+  @Prop() type?: 'normal' | 'bold' | 'italic' = 'normal';
   @Prop() identifier?: Identifier = 'button';
-  @Prop() items?: [string, string, string, string, string, string];
+  @Prop() items?: string[];
 
   @State() isOpen = false;
 
-  @Listen('logobuttonClicked')
   logobuttonClickedHandler(event: CustomEvent<Identifier>) {
     if (event.detail === 'dropdownMenuButton') {
       this.toggle();
@@ -42,10 +41,18 @@ export class GmailDropdownbutton implements ComponentInterface {
   render() {
     return (
       <Host>
-        <div class={`backdrop ${this.isOpen ? '' : 'hidden'}`} onClick={this.close.bind(this)} />
-        <gmail-logobutton class="dropdownbutton" size={this.size} type="dropdown" identifier="dropdownMenuButton"></gmail-logobutton>
+        <div class={`backdrop ${this.isOpen ? '' : 'hidden'}`} onClick={() => this.close()} />
+        <gmail-logobutton
+          class="dropdownbutton"
+          size={this.size}
+          type="dropdown"
+          identifier="dropdownMenuButton"
+          onLogobuttonClicked={(ev) => this.logobuttonClickedHandler(ev)}
+        ></gmail-logobutton>
         <div class={`dropdown ${this.isOpen ? '' : 'hidden'}`}>
-          <slot name="menu" />
+          {this.items.map((item) => (
+            <gmail-textbutton size={this.size} content={item} type={this.type}></gmail-textbutton>
+          ))}
         </div>
       </Host>
     );

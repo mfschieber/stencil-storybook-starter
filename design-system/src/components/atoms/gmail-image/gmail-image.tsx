@@ -15,7 +15,7 @@ export class GmailImage implements ComponentInterface {
     return (
       <Host>
         <img src={this.src} alt={this.alt} class={`img ${this.size} ${this.shape} ${this.online} `} />
-        <div class={`notification ${this.size}  ${this.online} `}></div>
+        <slot name="enbasadroite" />
       </Host>
     );
   }

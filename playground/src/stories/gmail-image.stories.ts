@@ -27,7 +27,9 @@ export default {
 } as Meta;
 
 const Template: Story<Components.GmailImage> = ({ src = undefined, alt = 'Text alt', size = 'medium', shape = 'round', online = 'online' }) => {
-  return html`<gmail-image alt=${alt} src=${src} size=${size} shape=${shape} online=${online}></gmail-image>`;
+  return html`<gmail-image alt=${alt} src=${src} size=${size} shape=${shape} online=${online}>
+    <div slot="enbasadroite"><gmail-notification size=${size} online=${'offline'} number="5"></gmail-notification></div>
+  </gmail-image>`;
 };
 
 export const Default: Story<Components.GmailImage> = Template.bind({});

@@ -7,7 +7,7 @@ import { Component, ComponentInterface, h, Host, Prop } from '@stencil/core';
 })
 export class GmailTitle implements ComponentInterface {
   @Prop() content!: string;
-  @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall' = 'medium';
+  @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall' | 'xxsmall' | 'xxxsmall' = 'medium';
   @Prop() type?: 'normal' | 'bold' | 'italic';
   render() {
     return (

@@ -10,10 +10,11 @@ export namespace Components {
     interface GmailDropdownbutton {
         "close": () => Promise<void>;
         "identifier"?: Identifier;
-        "items"?: [string, string, string, string, string, string];
+        "items"?: string[];
         "open": () => Promise<void>;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
         "toggle": () => Promise<void>;
+        "type"?: 'normal' | 'bold' | 'italic';
     }
     interface GmailImage {
         "alt": string;
@@ -26,6 +27,11 @@ export namespace Components {
         "identifier"?: Identifier;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
         "type"?: 'reload' | 'search' | 'leftarrow' | 'rightarrow' | 'gearwheel' | 'menu' | 'dropdown';
+    }
+    interface GmailNotification {
+        "number"?: any;
+        "online"?: 'online' | 'offline' | 'busy';
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
     }
     interface GmailSearch {
     }
@@ -40,7 +46,7 @@ export namespace Components {
     }
     interface GmailTitle {
         "content": string;
-        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall' | 'xxsmall' | 'xxxsmall';
         "type"?: 'normal' | 'bold' | 'italic';
     }
 }
@@ -62,6 +68,12 @@ declare global {
     var HTMLGmailLogobuttonElement: {
         prototype: HTMLGmailLogobuttonElement;
         new (): HTMLGmailLogobuttonElement;
+    };
+    interface HTMLGmailNotificationElement extends Components.GmailNotification, HTMLStencilElement {
+    }
+    var HTMLGmailNotificationElement: {
+        prototype: HTMLGmailNotificationElement;
+        new (): HTMLGmailNotificationElement;
     };
     interface HTMLGmailSearchElement extends Components.GmailSearch, HTMLStencilElement {
     }
@@ -91,6 +103,7 @@ declare global {
         "gmail-dropdownbutton": HTMLGmailDropdownbuttonElement;
         "gmail-image": HTMLGmailImageElement;
         "gmail-logobutton": HTMLGmailLogobuttonElement;
+        "gmail-notification": HTMLGmailNotificationElement;
         "gmail-search": HTMLGmailSearchElement;
         "gmail-searchbar": HTMLGmailSearchbarElement;
         "gmail-textbutton": HTMLGmailTextbuttonElement;
@@ -100,8 +113,9 @@ declare global {
 declare namespace LocalJSX {
     interface GmailDropdownbutton {
         "identifier"?: Identifier;
-        "items"?: [string, string, string, string, string, string];
+        "items"?: string[];
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+        "type"?: 'normal' | 'bold' | 'italic';
     }
     interface GmailImage {
         "alt": string;
@@ -115,6 +129,11 @@ declare namespace LocalJSX {
         "onLogobuttonClicked"?: (event: CustomEvent<Identifier>) => void;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
         "type"?: 'reload' | 'search' | 'leftarrow' | 'rightarrow' | 'gearwheel' | 'menu' | 'dropdown';
+    }
+    interface GmailNotification {
+        "number"?: any;
+        "online"?: 'online' | 'offline' | 'busy';
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
     }
     interface GmailSearch {
     }
@@ -130,13 +149,14 @@ declare namespace LocalJSX {
     }
     interface GmailTitle {
         "content": string;
-        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall' | 'xxsmall' | 'xxxsmall';
         "type"?: 'normal' | 'bold' | 'italic';
     }
     interface IntrinsicElements {
         "gmail-dropdownbutton": GmailDropdownbutton;
         "gmail-image": GmailImage;
         "gmail-logobutton": GmailLogobutton;
+        "gmail-notification": GmailNotification;
         "gmail-search": GmailSearch;
         "gmail-searchbar": GmailSearchbar;
         "gmail-textbutton": GmailTextbutton;
@@ -150,6 +170,7 @@ declare module "@stencil/core" {
             "gmail-dropdownbutton": LocalJSX.GmailDropdownbutton & JSXBase.HTMLAttributes<HTMLGmailDropdownbuttonElement>;
             "gmail-image": LocalJSX.GmailImage & JSXBase.HTMLAttributes<HTMLGmailImageElement>;
             "gmail-logobutton": LocalJSX.GmailLogobutton & JSXBase.HTMLAttributes<HTMLGmailLogobuttonElement>;
+            "gmail-notification": LocalJSX.GmailNotification & JSXBase.HTMLAttributes<HTMLGmailNotificationElement>;
             "gmail-search": LocalJSX.GmailSearch & JSXBase.HTMLAttributes<HTMLGmailSearchElement>;
             "gmail-searchbar": LocalJSX.GmailSearchbar & JSXBase.HTMLAttributes<HTMLGmailSearchbarElement>;
             "gmail-textbutton": LocalJSX.GmailTextbutton & JSXBase.HTMLAttributes<HTMLGmailTextbuttonElement>;

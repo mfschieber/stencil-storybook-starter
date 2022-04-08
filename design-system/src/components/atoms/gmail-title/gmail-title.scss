@@ -11,14 +11,24 @@
     font-size: 26px;
   }
   &.small {
-    margin: 4px 6px;
+    margin: 1px 6.5px;
     font-weight: 600;
     font-size: 20px;
   }
   &.xsmall {
-    margin: 2px 3px;
+    margin: 1px 4.5px;
     font-weight: 400;
     font-size: 14px;
+  }
+  &.xxsmall {
+    margin: 0px 2px;
+    font-weight: 400;
+    font-size: 7px;
+  }
+  &.xxxsmall {
+    margin: 0px 1px;
+    font-weight: 400;
+    font-size: 4px;
   }
   &.normal {
     font-weight: normal;
