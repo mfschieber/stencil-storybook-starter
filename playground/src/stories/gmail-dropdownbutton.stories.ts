@@ -2,8 +2,6 @@ import { Meta, Story } from '@storybook/web-components';
 import { Components } from '@yoobic/design-system';
 import { html } from 'lit-html';
 
-import { GmailDropdownbutton } from '../../../design-system/src/components/molecules/gmail-dropdownbutton/gmail-dropdownbutton';
-
 export default {
   title: 'MOLECULES/gmail-dropdownbutton',
   argTypes: {

@@ -7,6 +7,10 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Identifier } from "./components/shared/identifier";
 export namespace Components {
+    interface GmailCheckbox {
+        "identifier"?: Identifier;
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall' | 'xxsmall';
+    }
     interface GmailDropdownbutton {
         "close": () => Promise<void>;
         "identifier"?: Identifier;
@@ -52,6 +56,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLGmailCheckboxElement extends Components.GmailCheckbox, HTMLStencilElement {
+    }
+    var HTMLGmailCheckboxElement: {
+        prototype: HTMLGmailCheckboxElement;
+        new (): HTMLGmailCheckboxElement;
+    };
     interface HTMLGmailDropdownbuttonElement extends Components.GmailDropdownbutton, HTMLStencilElement {
     }
     var HTMLGmailDropdownbuttonElement: {
@@ -101,6 +111,7 @@ declare global {
         new (): HTMLGmailTitleElement;
     };
     interface HTMLElementTagNameMap {
+        "gmail-checkbox": HTMLGmailCheckboxElement;
         "gmail-dropdownbutton": HTMLGmailDropdownbuttonElement;
         "gmail-image": HTMLGmailImageElement;
         "gmail-logobutton": HTMLGmailLogobuttonElement;
@@ -112,6 +123,11 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface GmailCheckbox {
+        "identifier"?: Identifier;
+        "onCheckboxclicked"?: (event: CustomEvent<Identifier>) => void;
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall' | 'xxsmall';
+    }
     interface GmailDropdownbutton {
         "identifier"?: Identifier;
         "items"?: string[];
@@ -155,6 +171,7 @@ declare namespace LocalJSX {
         "type"?: 'normal' | 'bold' | 'italic';
     }
     interface IntrinsicElements {
+        "gmail-checkbox": GmailCheckbox;
         "gmail-dropdownbutton": GmailDropdownbutton;
         "gmail-image": GmailImage;
         "gmail-logobutton": GmailLogobutton;
@@ -169,6 +186,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "gmail-checkbox": LocalJSX.GmailCheckbox & JSXBase.HTMLAttributes<HTMLGmailCheckboxElement>;
             "gmail-dropdownbutton": LocalJSX.GmailDropdownbutton & JSXBase.HTMLAttributes<HTMLGmailDropdownbuttonElement>;
             "gmail-image": LocalJSX.GmailImage & JSXBase.HTMLAttributes<HTMLGmailImageElement>;
             "gmail-logobutton": LocalJSX.GmailLogobutton & JSXBase.HTMLAttributes<HTMLGmailLogobuttonElement>;
