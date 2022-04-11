@@ -5,7 +5,6 @@ import { Identifier } from '../../shared/identifier';
 @Component({
   tag: 'gmail-textbutton',
   styleUrl: 'gmail-textbutton.scss',
-  shadow: true,
 })
 export class GmailTextbutton implements ComponentInterface {
   @Prop() identifier?: Identifier = 'textbutton';
@@ -13,6 +12,7 @@ export class GmailTextbutton implements ComponentInterface {
   @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall' = 'medium';
   @Prop() type?: 'normal' | 'bold' | 'italic';
   @Prop() content?: string;
+  @Prop() isDisabled?: false;
 
   @Event({
     eventName: 'textbuttonClicked',
@@ -28,7 +28,7 @@ export class GmailTextbutton implements ComponentInterface {
   render() {
     return (
       <Host>
-        <button class="textbutton" onClick={this.textbuttonClickedHandler.bind(this)}>
+        <button class="textbutton" onClick={this.textbuttonClickedHandler.bind(this)} disabled={this.isDisabled}>
           <p class={`p ${this.size} ${this.type}`}>{this.content}</p>
         </button>
       </Host>

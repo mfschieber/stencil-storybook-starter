@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATOMS/gmail-logobutton should render 1`] = `
+<gmail-logobutton>
+  <mock:shadow-root>
+    <button class="logobutton">
+      <img class="img medium" src="">
+    </button>
+  </mock:shadow-root>
+</gmail-logobutton>
+`;

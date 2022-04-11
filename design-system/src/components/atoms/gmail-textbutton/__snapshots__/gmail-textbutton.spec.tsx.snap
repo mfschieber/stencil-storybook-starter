@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATOMS/gmail-textbutton should render 1`] = `
+<gmail-textbutton>
+  Test
+  <button class="textbutton">
+    <p class="medium p undefined"></p>
+  </button>
+</gmail-textbutton>
+`;

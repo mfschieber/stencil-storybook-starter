@@ -1,23 +1,23 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 
-import { GmailLogobutton } from './gmail-logobutton';
+import { GmailTextbutton } from './gmail-textbutton';
 
-describe('ATOMS/gmail-logobutton', () => {
+describe('ATOMS/gmail-textbutton', () => {
   let page;
 
   it('should render', async () => {
     page = await newSpecPage({
-      components: [GmailLogobutton],
-      template: () => <gmail-logobutton></gmail-logobutton>,
+      components: [GmailTextbutton],
+      template: () => <gmail-textbutton>Test</gmail-textbutton>,
     });
     expect(page.root).toMatchSnapshot();
   });
 
   it('should fire a click event', async () => {
     page = await newSpecPage({
-      components: [GmailLogobutton],
-      html: `<gmail-logobutton></gmail-logobutton>`,
+      components: [GmailTextbutton],
+      html: `<gmail-textbutton></gmail-textbutton>`,
     });
 
     const onClick = jest.fn();
