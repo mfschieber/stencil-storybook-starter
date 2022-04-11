@@ -13,15 +13,19 @@ export default {
       options: ['normal', 'bold', 'italic'],
       control: { type: 'inline-radio' },
     },
+    isDisabled: {
+      control: { type: 'boolean' },
+    },
   },
 } as Meta;
 
-const Template: Story<Components.GmailTextbutton> = ({ content = '', size = 'large', type = 'normal' }) => {
-  return html`<gmail-textbutton size=${size} content=${content} type=${type}></gmail-textbutton>`;
+const Template: Story<Components.GmailTextbutton> = ({ content = '', size = 'large', type = 'normal', isDisabled = true }) => {
+  return html`<gmail-textbutton size=${size} content=${content} type=${type} .isDisabled=${isDisabled}></gmail-textbutton>`;
 };
 
 export const Default: Story<Components.GmailTextbutton> = Template.bind({});
 Default.args = {
   size: 'large',
   content: 'Test',
+  isDisabled: true,
 };

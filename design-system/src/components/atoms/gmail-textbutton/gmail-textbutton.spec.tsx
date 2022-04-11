@@ -14,6 +14,30 @@ describe('ATOMS/gmail-textbutton', () => {
     expect(page.root).toMatchSnapshot();
   });
 
+  it('should render disabled', async () => {
+    page = await newSpecPage({
+      components: [GmailTextbutton],
+      template: () => <gmail-textbutton isDisabled={true}>Test</gmail-textbutton>,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('should render italic', async () => {
+    page = await newSpecPage({
+      components: [GmailTextbutton],
+      template: () => <gmail-textbutton type="italic">Test</gmail-textbutton>,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it('should render small', async () => {
+    page = await newSpecPage({
+      components: [GmailTextbutton],
+      template: () => <gmail-textbutton size="small">Test</gmail-textbutton>,
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+
   it('should fire a click event', async () => {
     page = await newSpecPage({
       components: [GmailTextbutton],

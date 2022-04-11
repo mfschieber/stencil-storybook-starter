@@ -41,7 +41,7 @@ export namespace Components {
     interface GmailTextbutton {
         "content"?: string;
         "identifier"?: Identifier;
-        "isDisabled"?: false;
+        "isDisabled"?: boolean;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
         "type"?: 'normal' | 'bold' | 'italic';
     }
@@ -144,7 +144,7 @@ declare namespace LocalJSX {
     interface GmailTextbutton {
         "content"?: string;
         "identifier"?: Identifier;
-        "isDisabled"?: false;
+        "isDisabled"?: boolean;
         "onTextbuttonClicked"?: (event: CustomEvent<Identifier>) => void;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
         "type"?: 'normal' | 'bold' | 'italic';

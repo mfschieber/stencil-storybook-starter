@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ATOMS/gmail-dropdownbutton should render 1`] = `
+<gmail-dropdownbutton>
+  <mock:shadow-root>
+    <div class="backdrop hidden"></div>
+    <gmail-logobutton class="dropdownbutton" identifier="dropdownMenuButton" size="medium" type="dropdown"></gmail-logobutton>
+    <div class="dropdown hidden"></div>
+  </mock:shadow-root>
+</gmail-dropdownbutton>
+`;

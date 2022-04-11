@@ -12,7 +12,7 @@ export class GmailTextbutton implements ComponentInterface {
   @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall' = 'medium';
   @Prop() type?: 'normal' | 'bold' | 'italic';
   @Prop() content?: string;
-  @Prop() isDisabled?: false;
+  @Prop() isDisabled?: boolean;
 
   @Event({
     eventName: 'textbuttonClicked',
@@ -28,7 +28,7 @@ export class GmailTextbutton implements ComponentInterface {
   render() {
     return (
       <Host>
-        <button class="textbutton" onClick={this.textbuttonClickedHandler.bind(this)} disabled={this.isDisabled}>
+        <button class={`textbutton ${this.isDisabled}`} onClick={this.textbuttonClickedHandler.bind(this)} disabled={true}>
           <p class={`p ${this.size} ${this.type}`}>{this.content}</p>
         </button>
       </Host>

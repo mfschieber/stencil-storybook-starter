@@ -3,8 +3,35 @@
 exports[`ATOMS/gmail-textbutton should render 1`] = `
 <gmail-textbutton>
   Test
-  <button class="textbutton">
+  <button class="textbutton undefined" disabled="">
     <p class="medium p undefined"></p>
+  </button>
+</gmail-textbutton>
+`;
+
+exports[`ATOMS/gmail-textbutton should render disabled 1`] = `
+<gmail-textbutton>
+  Test
+  <button class="textbutton true" disabled="">
+    <p class="medium p undefined"></p>
+  </button>
+</gmail-textbutton>
+`;
+
+exports[`ATOMS/gmail-textbutton should render italic 1`] = `
+<gmail-textbutton>
+  Test
+  <button class="textbutton undefined" disabled="">
+    <p class="italic medium p"></p>
+  </button>
+</gmail-textbutton>
+`;
+
+exports[`ATOMS/gmail-textbutton should render small 1`] = `
+<gmail-textbutton>
+  Test
+  <button class="textbutton undefined" disabled="">
+    <p class="p small undefined"></p>
   </button>
 </gmail-textbutton>
 `;

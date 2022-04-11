@@ -4,9 +4,14 @@
   height: fit-content;
   color: black;
   background: white;
-  border-color: grey;
-  border-width: 1px;
-  border-radius: 2px;
+  border-color: #d0d0d0;
+  border-width: 0.4px;
+  border-radius: 0.5rem;
+
+  &.true {
+    color: #adadad;
+    background-color: #f1f1f1;
+  }
 
   p {
     /* Sizes */
@@ -45,4 +50,8 @@
 
 .textbutton:hover {
   background-color: rgb(226, 222, 222);
+  &.true {
+    color: #adadad;
+    background-color: #f1f1f1;
+  }
 }

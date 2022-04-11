@@ -1,4 +1,10 @@
 :host {
+  .textbutton {
+    display: flex;
+    border-color: white;
+    border-radius: 0%;
+  }
+
   position: relative;
   display: flex;
   width: fit-content;
@@ -28,7 +34,7 @@
     padding-right: 0px;
     padding-bottom: 8px;
     padding-left: 0px;
-    border-radius: 2px;
+    white-space: nowrap;
     transform: translateY(0) translateX(0);
     opacity: 1;
     pointer-events: all;
