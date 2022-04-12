@@ -1,4 +1,7 @@
 .p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   /* Sizes */
   &.large {
     margin: 8px 12px;
@@ -39,5 +42,11 @@
   }
   &.bold {
     font-weight: bold;
+  }
+  &.noir {
+    color: black;
+  }
+  &.gris {
+    color: #5f6368;
   }
 }

@@ -1,0 +1,42 @@
+:host {
+  position: relative;
+  border-radius: 1px;
+  .fullstar {
+    background-color: transparent;
+    border: none;
+  }
+  .fullstar:hover {
+    background-color: rgb(226, 222, 222);
+    border-radius: 47%;
+  }
+  .emptystar {
+    background-color: transparent;
+    border: none;
+  }
+  .emptystar:hover {
+    background-color: rgb(226, 222, 222);
+    border-radius: 47%;
+  }
+  img {
+    position: relative;
+    object-fit: cover;
+
+    /* Sizes */
+    &.large {
+      width: 150px;
+      height: 150px;
+    }
+    &.medium {
+      width: 80px;
+      height: 80px;
+    }
+    &.small {
+      width: 40px;
+      height: 40px;
+    }
+    &.xsmall {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+:host {
+  width: 100%;
+  color: #202124;
+  .expediteur {
+    padding-right: 32px;
+  }
+  .buttonMailSelected {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    background: #c2dbff;
+    border-width: 0px;
+    .button1 {
+      display: none;
+    }
+    .button2 {
+      display: none;
+    }
+    .button3 {
+      display: none;
+    }
+    .button4 {
+      display: none;
+    }
+    .contenuMail {
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  .buttonMail {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    background: rgba(242, 245, 245, 0.8);
+    border-width: 0px;
+    .button1 {
+      display: none;
+    }
+    .button2 {
+      display: none;
+    }
+    .button3 {
+      display: none;
+    }
+    .button4 {
+      display: none;
+    }
+    .contenuMail {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      .mailTitle {
+        float: left;
+      }
+    }
+  }
+  .buttonMail:hover {
+    background: rgba(242, 245, 245, 0.8);
+    border-width: 0.5px;
+    .button1 {
+      display: flex;
+    }
+    .button2 {
+      display: flex;
+    }
+    .button3 {
+      display: flex;
+    }
+    .button4 {
+      display: flex;
+    }
+  }
+  .buttonMailSelected:hover {
+    background: #c2dbff;
+    border-width: 0.5px;
+    .button1 {
+      display: flex;
+    }
+    .button2 {
+      display: flex;
+    }
+    .button3 {
+      display: flex;
+    }
+    .button4 {
+      display: flex;
+    }
+  }
+}

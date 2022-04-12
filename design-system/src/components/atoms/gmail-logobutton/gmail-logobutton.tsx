@@ -11,7 +11,7 @@ export class GmailLogobutton implements ComponentInterface {
   @Prop() identifier?: Identifier = 'logobutton';
   @State() srcIcon = '';
   @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall' = 'medium';
-  @Prop() type?: 'reload' | 'search' | 'leftarrow' | 'rightarrow' | 'gearwheel' | 'menu' | 'dropdown';
+  @Prop() type?: 'reload' | 'search' | 'leftarrow' | 'rightarrow' | 'gearwheel' | 'menu' | 'dropdown' | 'archive' | 'delete' | 'markunread' | 'snooze';
 
   @Event({
     eventName: 'logobuttonClicked',
@@ -39,6 +39,14 @@ export class GmailLogobutton implements ComponentInterface {
       this.srcIcon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png';
     } else if (type == 'dropdown') {
       this.srcIcon = 'https://seekicon.com/free-icon-download/three-dots-vertical_1.png';
+    } else if (type == 'archive') {
+      this.srcIcon = 'https://www.gstatic.com/images/icons/material/system_gm/1x/archive_black_20dp.png';
+    } else if (type == 'delete') {
+      this.srcIcon = 'https://www.gstatic.com/images/icons/material/system_gm/1x/delete_black_20dp.png';
+    } else if (type == 'markunread') {
+      this.srcIcon = 'https://www.gstatic.com/images/icons/material/system_gm/1x/markunread_black_20dp.png';
+    } else if (type == 'snooze') {
+      this.srcIcon = 'https://www.gstatic.com/images/icons/material/system_gm/1x/watch_later_black_20dp.png';
     }
     return this.srcIcon;
   }

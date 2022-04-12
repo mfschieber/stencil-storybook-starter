@@ -56,3 +56,27 @@ Menu.args = {
   size: 'medium',
   type: 'menu',
 };
+
+export const Archive: Story<Components.GmailLogobutton> = Template.bind({});
+Archive.args = {
+  size: 'medium',
+  type: 'archive',
+};
+
+export const Delete: Story<Components.GmailLogobutton> = Template.bind({});
+Delete.args = {
+  size: 'medium',
+  type: 'delete',
+};
+
+export const MarkUnread: Story<Components.GmailLogobutton> = Template.bind({});
+MarkUnread.args = {
+  size: 'medium',
+  type: 'markunread',
+};
+
+export const Snooze: Story<Components.GmailLogobutton> = Template.bind({});
+Snooze.args = {
+  size: 'medium',
+  type: 'snooze',
+};

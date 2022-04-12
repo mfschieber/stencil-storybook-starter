@@ -3,7 +3,7 @@ import { Components } from '@yoobic/design-system';
 import { html } from 'lit-html';
 
 export default {
-  title: 'ATOMS/gmail-checkbox',
+  title: 'ATOMS/gmail-starbox',
   argTypes: {
     size: {
       options: ['large', 'medium', 'small', 'xsmall', 'xxsmall'],
@@ -12,11 +12,11 @@ export default {
   },
 } as Meta;
 
-const Template: Story<Components.GmailCheckbox> = ({ size }) => {
-  return html`<gmail-checkbox size=${size}></gmail-checkbox>`;
+const Template: Story<Components.GmailStarbox> = ({ size }) => {
+  return html`<gmail-starbox size=${size}></gmail-starbox>`;
 };
 
-export const Default: Story<Components.GmailCheckbox> = Template.bind({});
+export const Default: Story<Components.GmailStarbox> = Template.bind({});
 Default.args = {
   size: 'small',
 };

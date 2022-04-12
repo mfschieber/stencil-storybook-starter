@@ -23,7 +23,9 @@ describe('ATOMS/gmail-dropdownbutton', () => {
     const onClick = jest.fn();
     page.root.addEventListener('click', onClick);
     await page.waitForChanges();
+    expect(page.root).toMatchSnapshot();
     page.root.click();
     expect(onClick).toHaveBeenCalled();
+    expect(page.root).toMatchSnapshot();
   });
 });
