@@ -21,14 +21,14 @@ export default {
     },
     online: {
       options: ['online', 'offline', 'busy'],
-      control: { type: 'text' },
+      control: { type: 'inline-radio' },
     },
   },
 } as Meta;
 
 const Template: Story<Components.GmailImage> = ({ src = undefined, alt = 'Text alt', size = 'medium', shape = 'round', online = 'online' }) => {
   return html`<gmail-image alt=${alt} src=${src} size=${size} shape=${shape} online=${online}>
-    <div slot="enbasadroite"><gmail-notification size=${size} online=${'offline'} number="5"></gmail-notification></div>
+    <div slot="enbasadroite"><gmail-notification size=${size} online=${online} number="5"></gmail-notification></div>
   </gmail-image>`;
 };
 
