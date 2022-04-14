@@ -1,29 +1,89 @@
 :host {
+  --hover-color: rgb(226, 222, 222);
+  --background-color: transparent;
+
   position: relative;
   object-fit: cover;
   color: #444;
 
-  .star {
-    /* Sizes */
-    &.large {
-      width: 150px;
-      height: 150px;
-    }
-    &.medium {
-      width: 80px;
-      height: 80px;
-    }
-    &.small {
-      width: 40px;
-      height: 40px;
-    }
-    &.xsmall {
-      width: 20px;
-      height: 20px;
-    }
-    &.xxsmall {
-      width: 10px;
-      height: 10px;
-    }
+  // .checkbox {
+  //   /* Sizes */
+  //   &.large {
+  //     width: 150px;
+  //     height: 150px;
+  //   }
+  //   &.medium {
+  //     width: 80px;
+  //     height: 80px;
+  //   }
+  //   &.small {
+  //     width: 40px;
+  //     height: 40px;
+  //   }
+  //   &.xsmall {
+  //     width: 20px;
+  //     height: 20px;
+  //   }
+  //   &.xxsmall {
+  //     width: 10px;
+  //     height: 10px;
+  //   }
+  // }
+
+  [type='checkbox'] {
+    position: absolute;
+    left: 0;
+    background-color: transparent;
+    opacity: 0;
+  }
+
+  [type='checkbox'] + label {
+    position: relative;
+    padding-top: 0.24em;
+    padding-left: 1.5em;
+    font-size: 1.05em;
+    cursor: pointer;
+  }
+
+  /* Aspect de la case */
+  [type='checkbox']:not(:checked) + label::before,
+  [type='checkbox']:checked + label::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.4em;
+    height: 1.4em;
+    background-color: transparent;
+    border: 1px solid #5f6368;
+    border-radius: 0.2em;
+    content: '';
+  }
+
+  /* Aspect de la coche */
+  [type='checkbox']:not(:checked) + label::after,
+  [type='checkbox']:checked + label::after {
+    position: absolute;
+    top: 0.5em;
+    left: 0.1em;
+    color: #5f6368;
+    font-size: 1.6em;
+    line-height: 0;
+    content: '✓';
+  }
+
+  /* Aspect non cochée */
+  [type='checkbox']:not(:checked) + label::after {
+    opacity: 0;
+  }
+
+  /* Aspect cochée */
+  [type='checkbox']:checked + label::after {
+    opacity: 1;
+  }
+
+  /* Aspect de la coche */
+  [type='checkbox']:not(:checked) + label:hover,
+  [type='checkbox']:checked + label:hover {
+    background-color: var(--hover-color);
   }
 }

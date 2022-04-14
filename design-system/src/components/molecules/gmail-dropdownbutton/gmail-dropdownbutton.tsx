@@ -42,16 +42,17 @@ export class GmailDropdownbutton implements ComponentInterface {
     return (
       <Host>
         <div class={`backdrop ${this.isOpen ? '' : 'hidden'}`} onClick={() => this.close()} />
-        <gmail-logobutton
+        <gmail-button
           class="dropdownbutton"
           size={this.size}
+          content=""
           type="dropdown"
           identifier="dropdownMenuButton"
           onLogobuttonClicked={(ev) => this.logobuttonClickedHandler(ev)}
-        ></gmail-logobutton>
+        ></gmail-button>
         <div class={`dropdown ${this.isOpen ? '' : 'hidden'}`}>
           {this.items?.map((item) => (
-            <gmail-textbutton size={this.size} content={item} type={this.type}></gmail-textbutton>
+            <gmail-button size={this.size} identifier="dropdownMenuItem" content={item} font={this.type}></gmail-button>
           ))}
         </div>
       </Host>

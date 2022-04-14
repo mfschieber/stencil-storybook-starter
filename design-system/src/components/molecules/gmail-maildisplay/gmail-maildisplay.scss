@@ -1,4 +1,18 @@
 :host {
+  gmail-button {
+    --hover-color: rgba(32, 33, 36, 0.059);
+  }
+  gmail-starbox {
+    --hover-color: rgba(32, 33, 36, 0.059);
+  }
+  gmail-checkbox {
+    --hover-color: rgba(32, 33, 36, 0.059);
+  }
+  --hover-color-selected: rgba(32, 33, 36, 0.059);
+  --hover-color-notselected: rgb(226, 222, 222);
+  --background-color-selected: #c2dbff;
+  --background-color-notselected: rgba(242, 245, 245, 0.8);
+
   width: 100%;
   color: #202124;
   .expediteur {
@@ -9,7 +23,7 @@
     flex-wrap: nowrap;
     align-items: center;
     width: 100%;
-    background: #c2dbff;
+    background: var(--background-color-selected);
     border-width: 0px;
     .button1 {
       display: none;
@@ -22,6 +36,9 @@
     }
     .button4 {
       display: none;
+    }
+    .button5 {
+      display: flex;
     }
     .contenuMail {
       display: flex;
@@ -36,7 +53,7 @@
     flex-wrap: nowrap;
     align-items: center;
     width: 100%;
-    background: rgba(242, 245, 245, 0.8);
+    background: var(--background-color-notselected);
     border-width: 0px;
     .button1 {
       display: none;
@@ -50,6 +67,9 @@
     .button4 {
       display: none;
     }
+    .button5 {
+      display: flex;
+    }
     .contenuMail {
       width: 100%;
       overflow: hidden;
@@ -61,7 +81,6 @@
     }
   }
   .buttonMail:hover {
-    background: rgba(242, 245, 245, 0.8);
     border-width: 0.5px;
     .button1 {
       display: flex;
@@ -74,10 +93,12 @@
     }
     .button4 {
       display: flex;
+    }
+    .button5 {
+      display: none;
     }
   }
   .buttonMailSelected:hover {
-    background: #c2dbff;
     border-width: 0.5px;
     .button1 {
       display: flex;
@@ -90,6 +111,9 @@
     }
     .button4 {
       display: flex;
+    }
+    .button5 {
+      display: none;
     }
   }
 }

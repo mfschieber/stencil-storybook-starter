@@ -7,6 +7,28 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Identifier } from "./components/shared/identifier";
 export namespace Components {
+    interface GmailButton {
+        "content"?: string;
+        "font"?: 'normal' | 'bold' | 'italic';
+        "identifier"?: Identifier;
+        "isDisabled"?: boolean;
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+        "type"?: | 'reload'
+    | 'search'
+    | 'leftarrow'
+    | 'rightarrow'
+    | 'gearwheel'
+    | 'menu'
+    | 'dropdown'
+    | 'archive'
+    | 'delete'
+    | 'markunread'
+    | 'snooze'
+    | 'calendar'
+    | 'check'
+    | 'pen'
+    | 'notification';
+    }
     interface GmailCheckbox {
         "identifier"?: Identifier;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall' | 'xxsmall';
@@ -28,17 +50,34 @@ export namespace Components {
         "src": string;
     }
     interface GmailLogobutton {
+        "content"?: string;
+        "font"?: 'normal' | 'bold' | 'italic';
         "identifier"?: Identifier;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
-        "type"?: 'reload' | 'search' | 'leftarrow' | 'rightarrow' | 'gearwheel' | 'menu' | 'dropdown' | 'archive' | 'delete' | 'markunread' | 'snooze';
+        "type"?: | 'reload'
+    | 'search'
+    | 'leftarrow'
+    | 'rightarrow'
+    | 'gearwheel'
+    | 'menu'
+    | 'dropdown'
+    | 'archive'
+    | 'delete'
+    | 'markunread'
+    | 'snooze'
+    | 'calendar'
+    | 'check'
+    | 'pen'
+    | 'notification';
     }
     interface GmailMaildisplay {
         "expediteur"?: string;
         "identifier"?: Identifier;
+        "isRead"?: boolean;
+        "isSelected": boolean;
         "mailContent"?: string;
         "mailTitle"?: string;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
-        "type"?: 'normal' | 'bold' | 'italic';
     }
     interface GmailNotification {
         "number"?: any;
@@ -54,12 +93,9 @@ export namespace Components {
         "identifier"?: Identifier;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall' | 'xxsmall';
     }
-    interface GmailTextbutton {
-        "content"?: string;
+    interface GmailStartbanner {
         "identifier"?: Identifier;
-        "isDisabled"?: boolean;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
-        "type"?: 'normal' | 'bold' | 'italic';
     }
     interface GmailTitle {
         "content": string;
@@ -69,6 +105,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLGmailButtonElement extends Components.GmailButton, HTMLStencilElement {
+    }
+    var HTMLGmailButtonElement: {
+        prototype: HTMLGmailButtonElement;
+        new (): HTMLGmailButtonElement;
+    };
     interface HTMLGmailCheckboxElement extends Components.GmailCheckbox, HTMLStencilElement {
     }
     var HTMLGmailCheckboxElement: {
@@ -123,11 +165,11 @@ declare global {
         prototype: HTMLGmailStarboxElement;
         new (): HTMLGmailStarboxElement;
     };
-    interface HTMLGmailTextbuttonElement extends Components.GmailTextbutton, HTMLStencilElement {
+    interface HTMLGmailStartbannerElement extends Components.GmailStartbanner, HTMLStencilElement {
     }
-    var HTMLGmailTextbuttonElement: {
-        prototype: HTMLGmailTextbuttonElement;
-        new (): HTMLGmailTextbuttonElement;
+    var HTMLGmailStartbannerElement: {
+        prototype: HTMLGmailStartbannerElement;
+        new (): HTMLGmailStartbannerElement;
     };
     interface HTMLGmailTitleElement extends Components.GmailTitle, HTMLStencilElement {
     }
@@ -136,6 +178,7 @@ declare global {
         new (): HTMLGmailTitleElement;
     };
     interface HTMLElementTagNameMap {
+        "gmail-button": HTMLGmailButtonElement;
         "gmail-checkbox": HTMLGmailCheckboxElement;
         "gmail-dropdownbutton": HTMLGmailDropdownbuttonElement;
         "gmail-image": HTMLGmailImageElement;
@@ -145,11 +188,34 @@ declare global {
         "gmail-search": HTMLGmailSearchElement;
         "gmail-searchbar": HTMLGmailSearchbarElement;
         "gmail-starbox": HTMLGmailStarboxElement;
-        "gmail-textbutton": HTMLGmailTextbuttonElement;
+        "gmail-startbanner": HTMLGmailStartbannerElement;
         "gmail-title": HTMLGmailTitleElement;
     }
 }
 declare namespace LocalJSX {
+    interface GmailButton {
+        "content"?: string;
+        "font"?: 'normal' | 'bold' | 'italic';
+        "identifier"?: Identifier;
+        "isDisabled"?: boolean;
+        "onLogobuttonClicked"?: (event: CustomEvent<Identifier>) => void;
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+        "type"?: | 'reload'
+    | 'search'
+    | 'leftarrow'
+    | 'rightarrow'
+    | 'gearwheel'
+    | 'menu'
+    | 'dropdown'
+    | 'archive'
+    | 'delete'
+    | 'markunread'
+    | 'snooze'
+    | 'calendar'
+    | 'check'
+    | 'pen'
+    | 'notification';
+    }
     interface GmailCheckbox {
         "identifier"?: Identifier;
         "onCheckboxclicked"?: (event: CustomEvent<Identifier>) => void;
@@ -169,18 +235,34 @@ declare namespace LocalJSX {
         "src": string;
     }
     interface GmailLogobutton {
+        "content"?: string;
+        "font"?: 'normal' | 'bold' | 'italic';
         "identifier"?: Identifier;
-        "onLogobuttonClicked"?: (event: CustomEvent<Identifier>) => void;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
-        "type"?: 'reload' | 'search' | 'leftarrow' | 'rightarrow' | 'gearwheel' | 'menu' | 'dropdown' | 'archive' | 'delete' | 'markunread' | 'snooze';
+        "type"?: | 'reload'
+    | 'search'
+    | 'leftarrow'
+    | 'rightarrow'
+    | 'gearwheel'
+    | 'menu'
+    | 'dropdown'
+    | 'archive'
+    | 'delete'
+    | 'markunread'
+    | 'snooze'
+    | 'calendar'
+    | 'check'
+    | 'pen'
+    | 'notification';
     }
     interface GmailMaildisplay {
         "expediteur"?: string;
         "identifier"?: Identifier;
+        "isRead"?: boolean;
+        "isSelected"?: boolean;
         "mailContent"?: string;
         "mailTitle"?: string;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
-        "type"?: 'normal' | 'bold' | 'italic';
     }
     interface GmailNotification {
         "number"?: any;
@@ -197,13 +279,9 @@ declare namespace LocalJSX {
         "onStarboxclicked"?: (event: CustomEvent<Identifier>) => void;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall' | 'xxsmall';
     }
-    interface GmailTextbutton {
-        "content"?: string;
+    interface GmailStartbanner {
         "identifier"?: Identifier;
-        "isDisabled"?: boolean;
-        "onTextbuttonClicked"?: (event: CustomEvent<Identifier>) => void;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
-        "type"?: 'normal' | 'bold' | 'italic';
     }
     interface GmailTitle {
         "content": string;
@@ -212,6 +290,7 @@ declare namespace LocalJSX {
         "type"?: 'normal' | 'bold' | 'italic';
     }
     interface IntrinsicElements {
+        "gmail-button": GmailButton;
         "gmail-checkbox": GmailCheckbox;
         "gmail-dropdownbutton": GmailDropdownbutton;
         "gmail-image": GmailImage;
@@ -221,7 +300,7 @@ declare namespace LocalJSX {
         "gmail-search": GmailSearch;
         "gmail-searchbar": GmailSearchbar;
         "gmail-starbox": GmailStarbox;
-        "gmail-textbutton": GmailTextbutton;
+        "gmail-startbanner": GmailStartbanner;
         "gmail-title": GmailTitle;
     }
 }
@@ -229,6 +308,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "gmail-button": LocalJSX.GmailButton & JSXBase.HTMLAttributes<HTMLGmailButtonElement>;
             "gmail-checkbox": LocalJSX.GmailCheckbox & JSXBase.HTMLAttributes<HTMLGmailCheckboxElement>;
             "gmail-dropdownbutton": LocalJSX.GmailDropdownbutton & JSXBase.HTMLAttributes<HTMLGmailDropdownbuttonElement>;
             "gmail-image": LocalJSX.GmailImage & JSXBase.HTMLAttributes<HTMLGmailImageElement>;
@@ -238,7 +318,7 @@ declare module "@stencil/core" {
             "gmail-search": LocalJSX.GmailSearch & JSXBase.HTMLAttributes<HTMLGmailSearchElement>;
             "gmail-searchbar": LocalJSX.GmailSearchbar & JSXBase.HTMLAttributes<HTMLGmailSearchbarElement>;
             "gmail-starbox": LocalJSX.GmailStarbox & JSXBase.HTMLAttributes<HTMLGmailStarboxElement>;
-            "gmail-textbutton": LocalJSX.GmailTextbutton & JSXBase.HTMLAttributes<HTMLGmailTextbuttonElement>;
+            "gmail-startbanner": LocalJSX.GmailStartbanner & JSXBase.HTMLAttributes<HTMLGmailStartbannerElement>;
             "gmail-title": LocalJSX.GmailTitle & JSXBase.HTMLAttributes<HTMLGmailTitleElement>;
         }
     }

@@ -1,14 +1,14 @@
 import { h } from '@stencil/core';
 import { newSpecPage } from '@stencil/core/testing';
 
-import { GmailLogobutton } from './gmail-logobutton';
+import { GmailButton } from './gmail-button';
 
 describe('ATOMS/gmail-logobutton', () => {
   let page;
 
   it('should render', async () => {
     page = await newSpecPage({
-      components: [GmailLogobutton],
+      components: [GmailButton],
       template: () => <gmail-logobutton></gmail-logobutton>,
     });
     expect(page.root).toMatchSnapshot();
@@ -16,7 +16,7 @@ describe('ATOMS/gmail-logobutton', () => {
 
   it('should fire a click event', async () => {
     page = await newSpecPage({
-      components: [GmailLogobutton],
+      components: [GmailButton],
       html: `<gmail-logobutton></gmail-logobutton>`,
     });
 

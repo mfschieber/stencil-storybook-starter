@@ -11,9 +11,8 @@ export default {
     },
     expediteur: {},
     mailTitle: {},
-    type: {
-      options: ['normal', 'bold', 'italic'],
-      control: { type: 'inline-radio' },
+    isRead: {
+      control: { type: 'boolean' },
     },
   },
 } as Meta;
@@ -23,9 +22,9 @@ const Template: Story<Components.GmailMaildisplay> = ({
   expediteur = 'YOOBIC',
   mailTitle = '[Confluence] Product Knowledge Base > Notifications - Work ',
   mailContent = '- Il y a 1 nouvelle modification pour cette page icon Notifications  - Work ******* ******* a modifié cette page',
-  type = 'normal',
+  isRead,
 }) => {
-  return html`<gmail-maildisplay size=${size} expediteur=${expediteur} .mailTitle=${mailTitle} .mailContent=${mailContent} type=${type}></gmail-maildisplay>`;
+  return html`<gmail-maildisplay size=${size} expediteur=${expediteur} .mailTitle=${mailTitle} .mailContent=${mailContent} .isRead=${isRead}></gmail-maildisplay>`;
 };
 
 export const Default: Story<Components.GmailMaildisplay> = Template.bind({});
@@ -33,15 +32,5 @@ Default.args = {
   size: 'xsmall',
   expediteur: 'YOOBIC',
   mailTitle: '[Confluence] Product Knowledge Base > Notifications - Work ',
-  type: 'normal',
   mailContent: '- Il y a 1 nouvelle modification pour cette page icon Notifications  - Work ',
-};
-
-export const Unread: Story<Components.GmailMaildisplay> = Template.bind({});
-Unread.args = {
-  size: 'xsmall',
-  expediteur: 'YOOBIC',
-  mailTitle: '[Confluence] Product Knowledge Base > Notifications - Work ',
-  type: 'bold',
-  mailContent: '- Il y a 1 nouvelle modification pour cette page icon Notifications  - Work ******* ******* a modifié cette page',
 };

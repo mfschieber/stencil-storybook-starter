@@ -1,12 +1,15 @@
 :host {
+  --hover-color: rgb(226, 222, 222);
+  --background-color: transparent;
+
   position: relative;
   border-radius: 1px;
   .fullstar {
-    background-color: transparent;
+    background-color: var(--background-color);
     border: none;
   }
   .fullstar:hover {
-    background-color: rgb(226, 222, 222);
+    background-color: var(--hover-color);
     border-radius: 47%;
   }
   .emptystar {
@@ -14,7 +17,7 @@
     border: none;
   }
   .emptystar:hover {
-    background-color: rgb(226, 222, 222);
+    background-color: var(--hover-color);
     border-radius: 47%;
   }
   img {

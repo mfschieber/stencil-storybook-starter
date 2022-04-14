@@ -13,7 +13,7 @@ export class GmailSearchbar implements ComponentInterface {
     return (
       <Host>
         <div class="searchbar">
-          <gmail-logobutton class="logobutton" size="xsmall" type="search"></gmail-logobutton>
+          <gmail-button class="logobutton" size="xsmall" type="search"></gmail-button>
           <gmail-search class="search"></gmail-search>
         </div>
       </Host>

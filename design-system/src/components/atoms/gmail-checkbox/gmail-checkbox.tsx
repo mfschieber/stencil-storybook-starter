@@ -27,7 +27,8 @@ export class GmailCheckbox implements ComponentInterface {
   render() {
     return (
       <Host>
-        <input type="checkbox" onClick={() => this.checkboxclickedHandler()} class={`star ${this.size}`}></input>
+        <input type="checkbox" id="cgv" onClick={() => this.checkboxclickedHandler()} class={`checkbox ${this.size}`}></input>
+        <label htmlFor="cgv"></label>
       </Host>
     );
   }

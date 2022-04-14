@@ -1,0 +1,89 @@
+:host {
+  --hover-color: rgb(226, 222, 222);
+  --background-color: transparent;
+}
+
+button {
+  position: relative;
+  background-color: var(--background-color);
+  border-color: transparent;
+  border-radius: 1px;
+  &.logoOnly {
+    background-color: var(--background-color);
+  }
+  img {
+    position: relative;
+    object-fit: cover;
+    background-color: var(--background-color);
+    border-radius: 41%;
+    /* Sizes */
+    &.large {
+      width: 150px;
+      height: 150px;
+    }
+    &.medium {
+      width: 80px;
+      height: 80px;
+    }
+    &.small {
+      width: 40px;
+      height: 40px;
+    }
+    &.xsmall {
+      width: 20px;
+      height: 20px;
+    }
+    /* Types */
+    &.textOnly {
+      display: none;
+    }
+  }
+  .p {
+    &.logoOnly {
+      display: none;
+    }
+    /* Sizes */
+    &.large {
+      margin: 8px 12px;
+      font-weight: 900;
+      font-size: 32px;
+    }
+    &.medium {
+      margin: 6px 9px;
+      font-weight: 700;
+      font-size: 26px;
+    }
+    &.small {
+      margin: 4px 6px;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    &.xsmall {
+      margin: 2px 3px;
+      font-weight: 400;
+      font-size: 14px;
+    }
+    /* Fonts */
+    &.normal {
+      font-weight: normal;
+    }
+    &.italic {
+      font-weight: normal;
+      font-style: italic;
+    }
+    &.bold {
+      font-weight: bold;
+    }
+  }
+}
+
+button:hover {
+  background-color: var(--hover-color);
+  &.logoOnly {
+    border-radius: 47%;
+  }
+  // &.true {
+  //   color: #adadad;
+  //   background-color: red;
+  // }
+}
