@@ -25,6 +25,10 @@ export class GmailButton implements ComponentInterface {
     | 'calendar'
     | 'check'
     | 'pen'
+    | 'file'
+    | 'send'
+    | 'inbox'
+    | 'star'
     | 'notification';
   @Prop() content?: string;
   @Prop() font?: 'normal' | 'bold' | 'italic';
@@ -42,6 +46,18 @@ export class GmailButton implements ComponentInterface {
 
   buttonClickedHandler() {
     this.buttonClicked.emit(this.identifier);
+  }
+
+  tailleIcone(size) {
+    if (size == 'large') {
+      return 'medium';
+    } else if (size == 'medium') {
+      return 'small';
+    } else if (size == 'small') {
+      return 'xsmall';
+    } else if (size == 'xsmall') {
+      return 'xxsmall';
+    }
   }
 
   icone(type) {
@@ -75,6 +91,14 @@ export class GmailButton implements ComponentInterface {
       this.srcIcon = 'https://www.gstatic.com/images/icons/material/system/1x/ink_pen_gm_green600_24dp.png';
     } else if (type == 'notification') {
       this.srcIcon = 'https://www.gstatic.com/images/icons/material/system/1x/notifications_gm_red600_24dp.png';
+    } else if (type == 'inbox') {
+      this.srcIcon = 'https://www.gstatic.com/images/icons/material/system/1x/inbox_black_20dp.png';
+    } else if (type == 'star') {
+      this.srcIcon = 'https://www.gstatic.com/images/icons/material/system_gm/1x/star_border_black_20dp.png';
+    } else if (type == 'send') {
+      this.srcIcon = 'https://www.gstatic.com/images/icons/material/system_gm/1x/send_black_20dp.png';
+    } else if (type == 'file') {
+      this.srcIcon = 'https://www.gstatic.com/images/icons/material/system_gm/1x/insert_drive_file_black_20dp.png';
     }
     return this.srcIcon;
   }
@@ -99,7 +123,7 @@ export class GmailButton implements ComponentInterface {
     return (
       <Host>
         <button class={`${this.buttonType(this.type)} ${this.isDisabled}`} onClick={this.buttonClickedHandler.bind(this)} disabled={this.isDisabled}>
-          <img src={this.icone(this.type)} class={`img ${this.size} ${this.type} ${this.buttonType(this.type)}`} />
+          <img src={this.icone(this.type)} class={`img ${this.tailleIcone(this.size)} ${this.type} ${this.buttonType(this.type)}`} />
           <p class={`p ${this.size} ${this.type} ${this.font} ${this.buttonType(this.type)}`}>{this.content}</p>
         </button>
       </Host>

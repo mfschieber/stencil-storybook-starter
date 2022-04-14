@@ -29,6 +29,13 @@ Default.args = {
   type: 'reload',
 };
 
+export const TextAndLogo: Story<Components.GmailButton> = Template.bind({});
+TextAndLogo.args = {
+  size: 'medium',
+  type: 'reload',
+  content: 'Test',
+};
+
 export const Text: Story<Components.GmailButton> = Template.bind({});
 Text.args = {
   size: 'medium',
@@ -118,4 +125,28 @@ export const Notification: Story<Components.GmailButton> = Template.bind({});
 Notification.args = {
   size: 'medium',
   type: 'notification',
+};
+
+export const Inbox: Story<Components.GmailButton> = Template.bind({});
+Inbox.args = {
+  size: 'medium',
+  type: 'inbox',
+};
+
+export const Star: Story<Components.GmailButton> = Template.bind({});
+Star.args = {
+  size: 'medium',
+  type: 'star',
+};
+
+export const Send: Story<Components.GmailButton> = Template.bind({});
+Send.args = {
+  size: 'medium',
+  type: 'send',
+};
+
+export const File: Story<Components.GmailButton> = Template.bind({});
+File.args = {
+  size: 'medium',
+  type: 'file',
 };

@@ -11,6 +11,10 @@ button {
   &.logoOnly {
     background-color: var(--background-color);
   }
+  &.textLogo {
+    display: flex;
+    align-items: center;
+  }
   img {
     position: relative;
     object-fit: cover;
@@ -32,6 +36,10 @@ button {
     &.xsmall {
       width: 20px;
       height: 20px;
+    }
+    &.xxsmall {
+      width: 11px;
+      height: 11px;
     }
     /* Types */
     &.textOnly {
@@ -81,6 +89,9 @@ button:hover {
   background-color: var(--hover-color);
   &.logoOnly {
     border-radius: 47%;
+  }
+  &.textLogo {
+    border-radius: 4%;
   }
   // &.true {
   //   color: #adadad;

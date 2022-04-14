@@ -29,11 +29,11 @@ export class GmailStarbox implements ComponentInterface {
       <Host>
         {this.isChecked === true ? (
           <button class="fullstar" onClick={() => this.starboxclickedHandler()}>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/%C3%89toile_d%27or.svg/1024px-%C3%89toile_d%27or.svg.png" class={`img ${this.size}`} />
+            <img src="https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png" class={`img ${this.size}`} />
           </button>
         ) : (
           <button class="emptystar" onClick={() => this.starboxclickedHandler()}>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/220px-Five-pointed_star.svg.png" class={`img ${this.size}`} />
+            <img src="https://www.gstatic.com/images/icons/material/system_gm/1x/star_border_black_20dp.png" class={`img ${this.size}`} />
           </button>
         )}
       </Host>

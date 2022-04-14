@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  summary {
+    display: flex;
+  }
+  .dropdownMenu {
+    display: flex;
+    flex-direction: column;
+  }
+}
