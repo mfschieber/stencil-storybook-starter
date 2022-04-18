@@ -10,10 +10,17 @@ button {
   border-radius: 1px;
   &.logoOnly {
     background-color: var(--background-color);
+    border-radius: 47%;
   }
   &.textLogo {
     display: flex;
     align-items: center;
+    border-radius: 4%;
+  }
+  &.textOnly {
+    display: flex;
+    align-items: center;
+    border-radius: 4%;
   }
   img {
     position: relative;
@@ -94,8 +101,4 @@ button:hover {
   &.textLogo {
     border-radius: 4%;
   }
-  // &.true {
-  //   color: #adadad;
-  //   background-color: red;
-  // }
 }

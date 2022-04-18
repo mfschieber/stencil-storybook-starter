@@ -1,5 +1,6 @@
 import { Component, ComponentInterface, h, Host, Method, Prop, State } from '@stencil/core';
 
+import { GmailTitle } from '../../atoms/gmail-title/gmail-title';
 import { Identifier } from '../../shared/identifier';
 
 @Component({
@@ -11,7 +12,7 @@ export class GmailDropdownbutton implements ComponentInterface {
   @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall' = 'medium';
   @Prop() type?: 'normal' | 'bold' | 'italic' = 'normal';
   @Prop() identifier?: Identifier = 'button';
-  @Prop() items?: string[];
+  @Prop() items?: GmailTitle[]; //appeler item.title item.content
 
   @State() isOpen = false;
 
@@ -51,8 +52,8 @@ export class GmailDropdownbutton implements ComponentInterface {
           onLogobuttonClicked={(ev) => this.logobuttonClickedHandler(ev)}
         ></gmail-button>
         <div class={`dropdown ${this.isOpen ? '' : 'hidden'}`}>
-          {this.items?.map((item, index) => (
-            <gmail-button size={this.size} identifier="dropdownMenuItem" content={item} font={this.type}></gmail-button>
+          {this.items?.map((item) => (
+            <gmail-button size={this.size} identifier="dropdownMenuItem" content={item.content} textColor={item.textColor} font={this.type}></gmail-button>
           ))}
         </div>
       </Host>

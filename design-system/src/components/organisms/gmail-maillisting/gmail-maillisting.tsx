@@ -15,14 +15,16 @@ import { Identifier } from '../../shared/identifier';
 export class GmailMaillisting implements ComponentInterface {
   @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall' = 'small'; //type
   @Prop() identifier?: Identifier = 'logobutton';
-  //@Prop() items?: Email[];   //appeler item.title item.content
+
+  item1 = { content: 'Mark all as read' };
+  item2 = { content: 'Select messages to see more actions', textColor: '#5f6368' };
   render() {
     return (
       <Host>
         <div class="buttonsbar">
           <gmail-checkbox size={this.size}></gmail-checkbox>
           <gmail-button size={this.size} identifier={this.identifier} type="reload"></gmail-button>
-          <gmail-dropdownbutton size={this.size} type="normal" items={['Mark all as read', 'Select messages to see more actions']}></gmail-dropdownbutton>
+          <gmail-dropdownbutton size={this.size} type="normal" items={[this.item1, this.item2]}></gmail-dropdownbutton>
         </div>
         <gmail-startbanner size={this.size}></gmail-startbanner>
         <gmail-maildisplay

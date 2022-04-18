@@ -9,7 +9,8 @@ import { Identifier } from '../../shared/identifier';
 })
 export class GmailButton implements ComponentInterface {
   @Prop() identifier?: Identifier = 'logobutton';
-  @Prop() couleur?: string;
+  @Prop() color?: string;
+  @Prop() textColor?: string;
   @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall';
   @Prop() type?:
     | 'reload'
@@ -124,13 +125,15 @@ export class GmailButton implements ComponentInterface {
     return (
       <Host>
         <button
-          style={{ background: this.couleur }}
+          style={{ background: this.color }}
           class={`${this.buttonType(this.type)} ${this.isDisabled}`}
           onClick={this.buttonClickedHandler.bind(this)}
           disabled={this.isDisabled}
         >
           <img src={this.icone(this.type)} class={`img ${this.tailleIcone(this.size)} ${this.type} ${this.buttonType(this.type)}`} />
-          <p class={`p ${this.size} ${this.type} ${this.font} ${this.buttonType(this.type)}`}>{this.content}</p>
+          <p style={{ color: this.textColor }} class={`p ${this.size} ${this.type} ${this.font} ${this.buttonType(this.type)}`}>
+            {this.content}
+          </p>
         </button>
       </Host>
     );

@@ -16,12 +16,12 @@ export class GmailStartbanner implements ComponentInterface {
       <Host>
         <gmail-title content="Get started with Gmail" size="small" type="bold"></gmail-title>
         <div class="buttons">
-          <gmail-button size="small" identifier={this.identifier} type="check"></gmail-button>
-          <gmail-button size="small" identifier={this.identifier} content="Customize your inbox" font="normal"></gmail-button>
-          <gmail-button size="small" identifier={this.identifier} type="pen"></gmail-button>
-          <gmail-button size="small" identifier={this.identifier} content="Set a signature" font="normal"></gmail-button>
-          <gmail-button size="small" identifier={this.identifier} type="notification"></gmail-button>
-          <gmail-button size="small" identifier={this.identifier} content="Enable desktop notifications" font="normal"></gmail-button>
+          <gmail-button class="check" size="small" identifier={this.identifier} type="check" color="green"></gmail-button>
+          <gmail-button size="xsmall" identifier={this.identifier} content="Customize your inbox" font="normal"></gmail-button>
+          <gmail-button size="small" identifier={this.identifier} type="pen" color="#e6f4ea"></gmail-button>
+          <gmail-button size="xsmall" identifier={this.identifier} content="Set a signature" font="normal"></gmail-button>
+          <gmail-button size="small" identifier={this.identifier} type="notification" color="#fce8e6"></gmail-button>
+          <gmail-button size="xsmall" identifier={this.identifier} content="Enable desktop notifications" font="normal"></gmail-button>
         </div>
       </Host>
     );

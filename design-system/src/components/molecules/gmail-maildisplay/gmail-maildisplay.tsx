@@ -41,7 +41,7 @@ export class GmailMaildisplay implements ComponentInterface {
           <gmail-title class="expediteur" content={this.expediteur} size={this.size} type={this.read()}></gmail-title>
           <div class="contenuMail">
             <gmail-title class="mailTitle" content={this.mailTitle} size={this.size} type={this.read()}></gmail-title>
-            <gmail-title class="mailContent" content={this.mailContent} size={this.size} type={this.read()} couleur="gris"></gmail-title>
+            <gmail-title class="mailContent" content={this.mailContent} size={this.size} type={this.read()} textColor="gris"></gmail-title>
           </div>
           <gmail-button class="button1" size={this.size} identifier={this.identifier} type="archive" content=""></gmail-button>
           <gmail-button class="button2" size={this.size} identifier={this.identifier} type="delete" content=""></gmail-button>
@@ -58,7 +58,7 @@ export class GmailMaildisplay implements ComponentInterface {
           <gmail-title class="expediteur" content={this.expediteur} size={this.size} type={this.read()}></gmail-title>
           <div class="contenuMail">
             <gmail-title class="mailTitle" content={this.mailTitle} size={this.size} type={this.read()}></gmail-title>
-            <gmail-title class="mailContent" content={this.mailContent} size={this.size} type={this.read()} couleur="gris"></gmail-title>
+            <gmail-title class="mailContent" content={this.mailContent} size={this.size} type={this.read()} textColor="gris"></gmail-title>
           </div>
           <gmail-button class="button1" size={this.size} identifier={this.identifier} type="archive" content=""></gmail-button>
           <gmail-button class="button2" size={this.size} identifier={this.identifier} type="delete" content=""></gmail-button>

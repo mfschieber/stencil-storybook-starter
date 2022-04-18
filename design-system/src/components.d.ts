@@ -6,14 +6,16 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Identifier } from "./components/shared/identifier";
+import { GmailTitle } from "./components/atoms/gmail-title/gmail-title";
 export namespace Components {
     interface GmailButton {
+        "color"?: string;
         "content"?: string;
-        "couleur"?: string;
         "font"?: 'normal' | 'bold' | 'italic';
         "identifier"?: Identifier;
         "isDisabled"?: boolean;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+        "textColor"?: string;
         "type"?: | 'reload'
     | 'search'
     | 'leftarrow'
@@ -49,7 +51,7 @@ export namespace Components {
     interface GmailDropdownbutton {
         "close": () => Promise<void>;
         "identifier"?: Identifier;
-        "items"?: string[];
+        "items"?: GmailTitle[];
         "open": () => Promise<void>;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
         "toggle": () => Promise<void>;
@@ -61,27 +63,6 @@ export namespace Components {
         "shape"?: 'round' | 'smooth' | 'squared';
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
         "src": string;
-    }
-    interface GmailLogobutton {
-        "content"?: string;
-        "font"?: 'normal' | 'bold' | 'italic';
-        "identifier"?: Identifier;
-        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
-        "type"?: | 'reload'
-    | 'search'
-    | 'leftarrow'
-    | 'rightarrow'
-    | 'gearwheel'
-    | 'menu'
-    | 'dropdown'
-    | 'archive'
-    | 'delete'
-    | 'markunread'
-    | 'snooze'
-    | 'calendar'
-    | 'check'
-    | 'pen'
-    | 'notification';
     }
     interface GmailMaildisplay {
         "expediteur"?: string;
@@ -116,8 +97,8 @@ export namespace Components {
     }
     interface GmailTitle {
         "content": string;
-        "couleur"?: 'noir' | 'gris';
         "size"?: 'large' | 'medium' | 'small' | 'xsmall' | 'xxsmall' | 'xxxsmall';
+        "textColor"?: 'noir' | 'gris';
         "type"?: 'normal' | 'bold' | 'italic';
     }
 }
@@ -151,12 +132,6 @@ declare global {
     var HTMLGmailImageElement: {
         prototype: HTMLGmailImageElement;
         new (): HTMLGmailImageElement;
-    };
-    interface HTMLGmailLogobuttonElement extends Components.GmailLogobutton, HTMLStencilElement {
-    }
-    var HTMLGmailLogobuttonElement: {
-        prototype: HTMLGmailLogobuttonElement;
-        new (): HTMLGmailLogobuttonElement;
     };
     interface HTMLGmailMaildisplayElement extends Components.GmailMaildisplay, HTMLStencilElement {
     }
@@ -212,7 +187,6 @@ declare global {
         "gmail-details": HTMLGmailDetailsElement;
         "gmail-dropdownbutton": HTMLGmailDropdownbuttonElement;
         "gmail-image": HTMLGmailImageElement;
-        "gmail-logobutton": HTMLGmailLogobuttonElement;
         "gmail-maildisplay": HTMLGmailMaildisplayElement;
         "gmail-maillisting": HTMLGmailMaillistingElement;
         "gmail-notification": HTMLGmailNotificationElement;
@@ -225,13 +199,14 @@ declare global {
 }
 declare namespace LocalJSX {
     interface GmailButton {
+        "color"?: string;
         "content"?: string;
-        "couleur"?: string;
         "font"?: 'normal' | 'bold' | 'italic';
         "identifier"?: Identifier;
         "isDisabled"?: boolean;
         "onLogobuttonClicked"?: (event: CustomEvent<Identifier>) => void;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+        "textColor"?: string;
         "type"?: | 'reload'
     | 'search'
     | 'leftarrow'
@@ -266,7 +241,7 @@ declare namespace LocalJSX {
     }
     interface GmailDropdownbutton {
         "identifier"?: Identifier;
-        "items"?: string[];
+        "items"?: GmailTitle[];
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
         "type"?: 'normal' | 'bold' | 'italic';
     }
@@ -276,27 +251,6 @@ declare namespace LocalJSX {
         "shape"?: 'round' | 'smooth' | 'squared';
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
         "src": string;
-    }
-    interface GmailLogobutton {
-        "content"?: string;
-        "font"?: 'normal' | 'bold' | 'italic';
-        "identifier"?: Identifier;
-        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
-        "type"?: | 'reload'
-    | 'search'
-    | 'leftarrow'
-    | 'rightarrow'
-    | 'gearwheel'
-    | 'menu'
-    | 'dropdown'
-    | 'archive'
-    | 'delete'
-    | 'markunread'
-    | 'snooze'
-    | 'calendar'
-    | 'check'
-    | 'pen'
-    | 'notification';
     }
     interface GmailMaildisplay {
         "expediteur"?: string;
@@ -332,8 +286,8 @@ declare namespace LocalJSX {
     }
     interface GmailTitle {
         "content": string;
-        "couleur"?: 'noir' | 'gris';
         "size"?: 'large' | 'medium' | 'small' | 'xsmall' | 'xxsmall' | 'xxxsmall';
+        "textColor"?: 'noir' | 'gris';
         "type"?: 'normal' | 'bold' | 'italic';
     }
     interface IntrinsicElements {
@@ -342,7 +296,6 @@ declare namespace LocalJSX {
         "gmail-details": GmailDetails;
         "gmail-dropdownbutton": GmailDropdownbutton;
         "gmail-image": GmailImage;
-        "gmail-logobutton": GmailLogobutton;
         "gmail-maildisplay": GmailMaildisplay;
         "gmail-maillisting": GmailMaillisting;
         "gmail-notification": GmailNotification;
@@ -362,7 +315,6 @@ declare module "@stencil/core" {
             "gmail-details": LocalJSX.GmailDetails & JSXBase.HTMLAttributes<HTMLGmailDetailsElement>;
             "gmail-dropdownbutton": LocalJSX.GmailDropdownbutton & JSXBase.HTMLAttributes<HTMLGmailDropdownbuttonElement>;
             "gmail-image": LocalJSX.GmailImage & JSXBase.HTMLAttributes<HTMLGmailImageElement>;
-            "gmail-logobutton": LocalJSX.GmailLogobutton & JSXBase.HTMLAttributes<HTMLGmailLogobuttonElement>;
             "gmail-maildisplay": LocalJSX.GmailMaildisplay & JSXBase.HTMLAttributes<HTMLGmailMaildisplayElement>;
             "gmail-maillisting": LocalJSX.GmailMaillisting & JSXBase.HTMLAttributes<HTMLGmailMaillistingElement>;
             "gmail-notification": LocalJSX.GmailNotification & JSXBase.HTMLAttributes<HTMLGmailNotificationElement>;

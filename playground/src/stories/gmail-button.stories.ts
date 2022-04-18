@@ -19,8 +19,8 @@ export default {
   },
 } as Meta;
 
-const Template: Story<Components.GmailButton> = ({ identifier, size, type, content, font, isDisabled }) => {
-  return html`<gmail-button size=${size} identifier=${identifier} type=${type} content=${content} font=${font} isDisabled=${isDisabled}></gmail-button>`;
+const Template: Story<Components.GmailButton> = ({ identifier, size, type, content, font, isDisabled, textColor }) => {
+  return html`<gmail-button size=${size} identifier=${identifier} type=${type} content=${content} font=${font} isDisabled=${isDisabled} .textColor=${textColor}></gmail-button>`;
 };
 
 export const Default: Story<Components.GmailButton> = Template.bind({});
@@ -41,6 +41,7 @@ Text.args = {
   size: 'medium',
   content: 'Test',
   font: 'normal',
+  textColor: 'red',
 };
 
 export const Reload: Story<Components.GmailButton> = Template.bind({});

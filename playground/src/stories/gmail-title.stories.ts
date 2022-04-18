@@ -16,15 +16,15 @@ export default {
       options: ['normal', 'bold', 'italic'],
       control: { type: 'inline-radio' },
     },
-    couleur: {
+    textColor: {
       options: ['noir', 'gris'],
       control: { type: 'inline-radio' },
     },
   },
 } as Meta;
 
-const Template: Story<Components.GmailTitle> = ({ content = '', size = 'medium', type = 'normal', couleur = 'noir' }) => {
-  return html`<gmail-title content=${content} size=${size} type=${type} couleur=${couleur}></gmail-title>`;
+const Template: Story<Components.GmailTitle> = ({ content = '', size = 'medium', type = 'normal', textColor = 'noir' }) => {
+  return html`<gmail-title content=${content} size=${size} type=${type} .textColor=${textColor}></gmail-title>`;
 };
 
 export const Default: Story<Components.GmailTitle> = Template.bind({});
