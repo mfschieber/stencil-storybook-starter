@@ -9,6 +9,7 @@ import { Identifier } from '../../shared/identifier';
 })
 export class GmailButton implements ComponentInterface {
   @Prop() identifier?: Identifier = 'logobutton';
+  @Prop() couleur?: string;
   @Prop() size?: 'large' | 'medium' | 'small' | 'xsmall';
   @Prop() type?:
     | 'reload'
@@ -122,7 +123,12 @@ export class GmailButton implements ComponentInterface {
   render() {
     return (
       <Host>
-        <button class={`${this.buttonType(this.type)} ${this.isDisabled}`} onClick={this.buttonClickedHandler.bind(this)} disabled={this.isDisabled}>
+        <button
+          style={{ background: this.couleur }}
+          class={`${this.buttonType(this.type)} ${this.isDisabled}`}
+          onClick={this.buttonClickedHandler.bind(this)}
+          disabled={this.isDisabled}
+        >
           <img src={this.icone(this.type)} class={`img ${this.tailleIcone(this.size)} ${this.type} ${this.buttonType(this.type)}`} />
           <p class={`p ${this.size} ${this.type} ${this.font} ${this.buttonType(this.type)}`}>{this.content}</p>
         </button>

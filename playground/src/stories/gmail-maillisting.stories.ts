@@ -3,7 +3,7 @@ import { Components } from '@yoobic/design-system';
 import { html } from 'lit-html';
 
 export default {
-  title: 'MOLECULES/gmail-startbanner',
+  title: 'ORGANISMS/gmail-maillisting',
   argTypes: {
     size: {
       options: ['large', 'medium', 'small', 'xsmall'],
@@ -12,11 +12,11 @@ export default {
   },
 } as Meta;
 
-const Template: Story<Components.GmailStartbanner> = ({ size }) => {
-  return html`<gmail-startbanner size=${size}></gmail-startbanner>`;
+const Template: Story<Components.GmailMaillisting> = ({ size = 'small' }) => {
+  return html`<gmail-maillisting size=${size}></gmail-maillisting>`;
 };
 
-export const Default: Story<Components.GmailStartbanner> = Template.bind({});
+export const Default: Story<Components.GmailMaillisting> = Template.bind({});
 Default.args = {
-  size: 'large',
+  size: 'small',
 };

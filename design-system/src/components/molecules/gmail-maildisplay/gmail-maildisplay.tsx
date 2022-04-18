@@ -20,7 +20,7 @@ export class GmailMaildisplay implements ComponentInterface {
   @State() type?: 'normal' | 'bold' | 'italic';
 
   checkboxClickedHandler() {
-    const today = new Date();
+    //const today = new Date();
     this.isSelected = !this.isSelected;
   }
 

@@ -9,6 +9,7 @@ import { Identifier } from "./components/shared/identifier";
 export namespace Components {
     interface GmailButton {
         "content"?: string;
+        "couleur"?: string;
         "font"?: 'normal' | 'bold' | 'italic';
         "identifier"?: Identifier;
         "isDisabled"?: boolean;
@@ -91,6 +92,10 @@ export namespace Components {
         "mailTitle"?: string;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
     }
+    interface GmailMaillisting {
+        "identifier"?: Identifier;
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+    }
     interface GmailNotification {
         "number"?: any;
         "online"?: 'online' | 'offline' | 'busy';
@@ -159,6 +164,12 @@ declare global {
         prototype: HTMLGmailMaildisplayElement;
         new (): HTMLGmailMaildisplayElement;
     };
+    interface HTMLGmailMaillistingElement extends Components.GmailMaillisting, HTMLStencilElement {
+    }
+    var HTMLGmailMaillistingElement: {
+        prototype: HTMLGmailMaillistingElement;
+        new (): HTMLGmailMaillistingElement;
+    };
     interface HTMLGmailNotificationElement extends Components.GmailNotification, HTMLStencilElement {
     }
     var HTMLGmailNotificationElement: {
@@ -203,6 +214,7 @@ declare global {
         "gmail-image": HTMLGmailImageElement;
         "gmail-logobutton": HTMLGmailLogobuttonElement;
         "gmail-maildisplay": HTMLGmailMaildisplayElement;
+        "gmail-maillisting": HTMLGmailMaillistingElement;
         "gmail-notification": HTMLGmailNotificationElement;
         "gmail-search": HTMLGmailSearchElement;
         "gmail-searchbar": HTMLGmailSearchbarElement;
@@ -214,6 +226,7 @@ declare global {
 declare namespace LocalJSX {
     interface GmailButton {
         "content"?: string;
+        "couleur"?: string;
         "font"?: 'normal' | 'bold' | 'italic';
         "identifier"?: Identifier;
         "isDisabled"?: boolean;
@@ -294,6 +307,10 @@ declare namespace LocalJSX {
         "mailTitle"?: string;
         "size"?: 'large' | 'medium' | 'small' | 'xsmall';
     }
+    interface GmailMaillisting {
+        "identifier"?: Identifier;
+        "size"?: 'large' | 'medium' | 'small' | 'xsmall';
+    }
     interface GmailNotification {
         "number"?: any;
         "online"?: 'online' | 'offline' | 'busy';
@@ -327,6 +344,7 @@ declare namespace LocalJSX {
         "gmail-image": GmailImage;
         "gmail-logobutton": GmailLogobutton;
         "gmail-maildisplay": GmailMaildisplay;
+        "gmail-maillisting": GmailMaillisting;
         "gmail-notification": GmailNotification;
         "gmail-search": GmailSearch;
         "gmail-searchbar": GmailSearchbar;
@@ -346,6 +364,7 @@ declare module "@stencil/core" {
             "gmail-image": LocalJSX.GmailImage & JSXBase.HTMLAttributes<HTMLGmailImageElement>;
             "gmail-logobutton": LocalJSX.GmailLogobutton & JSXBase.HTMLAttributes<HTMLGmailLogobuttonElement>;
             "gmail-maildisplay": LocalJSX.GmailMaildisplay & JSXBase.HTMLAttributes<HTMLGmailMaildisplayElement>;
+            "gmail-maillisting": LocalJSX.GmailMaillisting & JSXBase.HTMLAttributes<HTMLGmailMaillistingElement>;
             "gmail-notification": LocalJSX.GmailNotification & JSXBase.HTMLAttributes<HTMLGmailNotificationElement>;
             "gmail-search": LocalJSX.GmailSearch & JSXBase.HTMLAttributes<HTMLGmailSearchElement>;
             "gmail-searchbar": LocalJSX.GmailSearchbar & JSXBase.HTMLAttributes<HTMLGmailSearchbarElement>;
