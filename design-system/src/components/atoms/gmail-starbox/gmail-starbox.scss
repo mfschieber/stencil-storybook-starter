@@ -1,45 +1,79 @@
-:host {
-  --hover-color: rgb(226, 222, 222);
-  --background-color: transparent;
+/* Basic layout styling */
+body {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
 
+  text-align: center;
+}
+
+label {
+  font-size: 2rem;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-appearance: none;
+}
+
+.checkbox:before {
+  display: inline-block;
+  width: 2rem;
+
+  height: 2rem;
+  background: #bdbdbd;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  content: '';
+}
+
+.checkbox:hover {
+  transform: scale(0.9);
+}
+
+.checkbox:checked {
   position: relative;
-  border-radius: 1px;
-  .fullstar {
-    background-color: var(--background-color);
-    border: none;
-  }
-  .fullstar:hover {
-    background-color: var(--hover-color);
-    border-radius: 47%;
-  }
-  .emptystar {
-    background-color: transparent;
-    border: none;
-  }
-  .emptystar:hover {
-    background-color: var(--hover-color);
-    border-radius: 47%;
-  }
-  img {
-    position: relative;
-    object-fit: cover;
+}
 
-    /* Sizes */
-    &.large {
-      width: 150px;
-      height: 150px;
-    }
-    &.medium {
-      width: 80px;
-      height: 80px;
-    }
-    &.small {
-      width: 40px;
-      height: 40px;
-    }
-    &.xsmall {
-      width: 20px;
-      height: 20px;
-    }
-  }
+.checkbox:after {
+  position: absolute;
+  font-weight: 700;
+
+  font-size: 1.5rem;
+  content: '';
+  // color: #ff4081;
+}
+
+.checkbox:checked:after {
+  color: white;
+  content: '\2714';
+}
+
+.checkbox:focus {
+  outline: none;
+}
+
+.checkbox:checked:before {
+  background-color: #039be5;
+}
+
+.checkbox-round:before {
+  border-radius: 100%;
+}
+
+.checkbox-star:before {
+  padding-bottom: 2px;
+  background: transparent;
+  box-shadow: none;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'%3E%3Cpath  fill='%23bdbdbd' d='M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.checkbox-star:checked:before {
+  background: none;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' style='width:24px;height:24px' viewBox='0 0 24 24'%3E%3Cpath fill='%23FBC02D' d='M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z' /%3E%3C/svg%3E");
+}
+
+.checkbox-star:checked:after {
+  background: none;
+  content: '';
 }

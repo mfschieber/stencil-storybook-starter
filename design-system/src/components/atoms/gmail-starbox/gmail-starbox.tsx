@@ -27,15 +27,8 @@ export class GmailStarbox implements ComponentInterface {
   render() {
     return (
       <Host>
-        {this.isChecked === true ? (
-          <button class="fullstar" onClick={() => this.starboxclickedHandler()}>
-            <img src="https://www.gstatic.com/images/icons/material/system/1x/star_googyellow500_20dp.png" class={`img ${this.size}`} />
-          </button>
-        ) : (
-          <button class="emptystar" onClick={() => this.starboxclickedHandler()}>
-            <img src="https://www.gstatic.com/images/icons/material/system_gm/1x/star_border_black_20dp.png" class={`img ${this.size}`} />
-          </button>
-        )}
+        <input type="checkbox" name="checkboxRating" id="checkbox1" class="checkbox checkbox-star" onClick={() => this.starboxclickedHandler()} />
+        <label></label>
       </Host>
     );
   }
