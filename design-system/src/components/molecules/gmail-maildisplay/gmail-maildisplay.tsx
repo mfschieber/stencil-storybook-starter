@@ -32,6 +32,18 @@ export class GmailMaildisplay implements ComponentInterface {
     }
   }
 
+  tailleIcone(size) {
+    if (size == 'large') {
+      return 'medium';
+    } else if (size == 'medium') {
+      return 'medium';
+    } else if (size == 'small') {
+      return 'medium';
+    } else if (size == 'xsmall') {
+      return 'small';
+    }
+  }
+
   render() {
     return this.isSelected ? (
       <Host isSelected={this.isSelected}>
@@ -43,11 +55,11 @@ export class GmailMaildisplay implements ComponentInterface {
             <gmail-title class="mailTitle" content={this.mailTitle} size={this.size} type={this.read()}></gmail-title>
             <gmail-title class="mailContent" content={this.mailContent} size={this.size} type={this.read()} textColor="gris"></gmail-title>
           </div>
-          <gmail-button class="button1" size={this.size} identifier={this.identifier} type="archive" content=""></gmail-button>
-          <gmail-button class="button2" size={this.size} identifier={this.identifier} type="delete" content=""></gmail-button>
-          <gmail-button class="button3" size={this.size} identifier={this.identifier} type="markunread" content=""></gmail-button>
-          <gmail-button class="button4" size={this.size} identifier={this.identifier} type="snooze" content=""></gmail-button>
-          <gmail-button class="button5" size={this.size} identifier={this.identifier} type="calendar" content=""></gmail-button>
+          <gmail-button class="button1" size={this.tailleIcone(this.size)} identifier={this.identifier} type="archive" content=""></gmail-button>
+          <gmail-button class="button2" size={this.tailleIcone(this.size)} identifier={this.identifier} type="delete" content=""></gmail-button>
+          <gmail-button class="button3" size={this.tailleIcone(this.size)} identifier={this.identifier} type="markunread" content=""></gmail-button>
+          <gmail-button class="button4" size={this.tailleIcone(this.size)} identifier={this.identifier} type="snooze" content=""></gmail-button>
+          <gmail-button class="button5" size={this.tailleIcone(this.size)} identifier={this.identifier} type="calendar" content=""></gmail-button>
         </button>
       </Host>
     ) : (
@@ -60,11 +72,11 @@ export class GmailMaildisplay implements ComponentInterface {
             <gmail-title class="mailTitle" content={this.mailTitle} size={this.size} type={this.read()}></gmail-title>
             <gmail-title class="mailContent" content={this.mailContent} size={this.size} type={this.read()} textColor="gris"></gmail-title>
           </div>
-          <gmail-button class="button1" size={this.size} identifier={this.identifier} type="archive" content=""></gmail-button>
-          <gmail-button class="button2" size={this.size} identifier={this.identifier} type="delete" content=""></gmail-button>
-          <gmail-button class="button3" size={this.size} identifier={this.identifier} type="markunread" content=""></gmail-button>
-          <gmail-button class="button4" size={this.size} identifier={this.identifier} type="snooze" content=""></gmail-button>
-          <gmail-button class="button5" size={this.size} identifier={this.identifier} type="calendar" content=""></gmail-button>
+          <gmail-button class="button1" size={this.tailleIcone(this.size)} identifier={this.identifier} type="archive" content=""></gmail-button>
+          <gmail-button class="button2" size={this.tailleIcone(this.size)} identifier={this.identifier} type="delete" content=""></gmail-button>
+          <gmail-button class="button3" size={this.tailleIcone(this.size)} identifier={this.identifier} type="markunread" content=""></gmail-button>
+          <gmail-button class="button4" size={this.tailleIcone(this.size)} identifier={this.identifier} type="snooze" content=""></gmail-button>
+          <gmail-button class="button5" size={this.tailleIcone(this.size)} identifier={this.identifier} type="calendar" content=""></gmail-button>
         </button>
       </Host>
     );
