@@ -9,6 +9,10 @@ export default {
       options: ['large', 'medium', 'small', 'xsmall'],
       control: { type: 'inline-radio' },
     },
+    type: {
+      options: ['normal', 'bold', 'italic'],
+      control: { type: 'inline-radio' },
+    },
   },
 } as Meta;
 
@@ -20,4 +24,5 @@ export const Default: Story<Components.GmailDetails> = Template.bind({});
 Default.args = {
   summary: 'Mail',
   content: 'Test',
+  type: 'normal',
 };

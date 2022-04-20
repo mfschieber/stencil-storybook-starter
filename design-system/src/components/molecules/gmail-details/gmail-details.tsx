@@ -34,9 +34,8 @@ export class GmailDetails implements ComponentInterface {
   render() {
     return (
       <Host>
-        <details onClick={() => this.detailsClickedHandler()}>
-          <summary>
-            <img src={this.icone} class={`img ${this.size} ${this.type}`} />
+        <details onClick={() => this.detailsClickedHandler()} class={`details ${this.size} `}>
+          <summary class={`summary ${this.size} `}>
             <gmail-title content={this.summary} size={this.size} type={this.type}></gmail-title>
           </summary>
           <div class="dropdownMenu">

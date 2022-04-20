@@ -6,9 +6,51 @@
   display: flex;
   summary {
     display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
   }
   .dropdownMenu {
     display: flex;
     flex-direction: column;
+    transform: translate(120px, 10%) 2s;
+    transition: display 1s;
+  }
+}
+
+details > summary:after {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  background-image: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="4rem" height="4rem"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="lightgray" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  transform: rotate(90deg);
+  content: ' ';
+}
+
+/* Rotate the arrow when the collapsible is open */
+details[open] > summary:after {
+  transform: rotate(-90deg);
+}
+
+.summary:hover {
+  width: 100%;
+  background: rgb(226, 222, 222);
+}
+
+details[open] summary ~ * {
+  animation: sweep 0.5s ease-in-out;
+}
+
+@keyframes sweep {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
